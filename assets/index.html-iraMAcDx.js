@@ -1,0 +1,1 @@
+import{_ as e,c as t,o}from"./app-Ccl-ihA3.js";const r={};function a(c,n){return o(),t("div")}const l=e(r,[["render",a]]),i=JSON.parse('{"path":"/blogs/dobetter/","title":"玩出点名堂","lang":"en-US","frontmatter":{"title":"玩出点名堂"},"headers":[],"git":{},"filePathRelative":"blogs/dobetter/README.md"}');export{l as comp,i as data};
