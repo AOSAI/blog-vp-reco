@@ -10,6 +10,7 @@ export default defineUserConfig({
   bundler: viteBundler(),
   // bundler: webpackBundler(),
 
+  base: "/blog-vp-reco/",
   theme: theme,
   extendsMarkdown,
   plugins: plugins,
