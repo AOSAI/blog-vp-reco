@@ -1,0 +1,21 @@
+@media (orientation: landscape) {
+  .layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+@media (orientation: portrait) {
+  .layout {
+    display: block;
+  }
+}
+
+figure {
+  display: block;
+  text-align: center;
+}
+figure img {
+  margin: 0 auto;
+  display: inline-block;
+}
