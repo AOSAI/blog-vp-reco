@@ -3,31 +3,6 @@ title: Vuepress-reco教程
 date: 2025/08/15
 ---
 
-## 插件库更新日志
-
-### 8 月末
-
-引入了 markdown-it 的四个插件，由于官方没有 TS 的版本，只有 JS，因此自己写了 .d.ts 文件进行了声明：
-
-- markdown-it-attrs，css 布局差价
-- markdown-it-mark，代码高亮
-- markdown-it-katex，数学公式与符号的解析
-- markdown-it-imsize，在 md 的图像输入中使用 “=360x”
-
-### 9 月初
-
-1. 使用 @vuepress/plugin-markdown-math 替换了 markdown-it-katex。
-2. 引入了 @vuepress/plugin-markdown-image，启用了 图像标题、懒加载、图像缩放 三个功能，markdown-it-imsize 被取代；同时因为 图像标题 显示时，在 img 标签外构造了新的 div，与 markdown-it-attrs 撞车了，所以更改了全局 CSS 代码，删除了 attrs。
-3. 引入了 @vuepress/plugin-markdown-tab，可以在 md 内部构造标签页，包括代码块也可以覆盖。
-
-目前最新的 reco 主题为 2.0.0-rc.26 版本，所使用的 vuepress 是 19 的版本，在使用 @vuepress/plugin 插件库时在 github 日志中查询了很多次才对应上，70 到 78 的版本号都能用。但是还有一个踩坑点，github 上是每个版本号都有的，但是 npm 里面，我最初下载的 72，结果我去一看 npm 里面就缺了 72，没有，离不离谱？最后下载了使用人数最多的 74。
-
-同时，我尝试使用了对应版本和最新版本的 shiki、medium-zoom，都有一些异常，使用失败。
-
-### 9 月中旬
-
-1. 删除了 @vuepress/plugin-markdown-tab 插件，reco 有自定义的 Markdown 扩展，叫做 “自定义容器”，代码有选项卡格式。
-
 ## 1. Node.js 环境配置
 
 我之前使用过 vuepress-theme-hope，不管是 hope 还是现在的 reco，都是基于 vuepress 二次开发的个人博客框架。因此，首先要在电脑中配置 Node.js 环境。

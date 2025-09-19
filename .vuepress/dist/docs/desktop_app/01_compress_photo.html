@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-rc.19">
+    <script>
+      (function() {
+        const userMode = localStorage.getItem('vuepress-reco-color-scheme') || 'auto';
+        const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (userMode === 'dark' || (userMode === 'auto' && systemDarkMode)) {
+          document.documentElement.classList.toggle('dark', true);
+        }
+      })();
+    </script>
+    <title>Python桌面压缩图片小工具 | AoSaiX</title><meta name="description" content="Blog for study, life and hobby.">
+    <link rel="preload" href="/blog-vp-reco/assets/style-7OIMBXxo.css" as="style"><link rel="stylesheet" href="/blog-vp-reco/assets/style-7OIMBXxo.css">
+    <link rel="modulepreload" href="/blog-vp-reco/assets/app-knK7nh4Q.js"><link rel="modulepreload" href="/blog-vp-reco/assets/01_compress_photo.html-C0Qhd2s6.js">
+    <link rel="prefetch" href="/blog-vp-reco/assets/timeline.html-Rc9lSLWC.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/posts.html-Djdv8p5q.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/friendship-link.html-B2wXUCZW.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/1.html-BaQY98k3.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/2.html-tg_jECPQ.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/index.html-CifLoGP_.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/update_record.html-CtI-qXTS.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/vuepress-recojiaocheng.html--L53zuXk.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/02_file_packaging.html-DHXTqtJf.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/03_pyqt5_recording.html-CwcsKycP.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/04_spider_for_ticket.html-CyN0RWlq.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/index.html-BapvK2xC.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/Introduction.html-BcKTt0Kh.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/Introduction.html-Y9femfA0.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/01_fargoing.html-BbgJuEb3.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/02_shanxi.html-CAbXJxWI.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/03_sichuan.html-CltqXC4l.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/00.html-Cfu1ZYE8.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/01.html-DReRZIiM.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/01_zongshu.html-DryVvuCZ.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/02_xxx.html-CHJhDP9X.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/03_xxx.html-ClD6GdpL.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/01_zongshu.html-DucRcWYg.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/02_jichucaozuo.html-DXJ0T34b.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/03_zaoshengyulvbo.html-Cla_uJ1M.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/04_xinhaoyutuxiang.html-D_CdcrO4.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/05_xingtaixueyutezheng.html-W5zHtKSa.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/06_yasuoyubianma.html-kKQeEU4u.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/01_zongshu.html-CIHkf9HX.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/02_xxx.html-C9rAIckl.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/03_xxx.html-MaNpB19B.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/01_xxx.html-DY3XJIxc.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/02_xxx.html-BhaqLdeA.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/01_bairuzongmen.html-DzPhAKk9.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/02_aolianjingu.html-DfoF1FKE.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/01_base.html-BHgsmiaX.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/02_project1.html-BXGw4-zh.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/02_project2.html-C4qVq0t8.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/03_project1.html-DwlC94qJ.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/index.html-DdWuaqHN.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/00_introduction.html-DmTnoiRn.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/01_recommend_model.html-DW0YbVDE.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/01_introduction.html-B2NOwYOj.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/02_linear_regression.html-Bbq_KgVE.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/03_linear_regression.html-DgRTkAwm.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/04_classification.html-BnjoqDaR.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/05_deep_learning.html-BGqyID43.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/06_tensorflow.html-C8NWuuGl.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/07_model_evaluation.html-CkHDWrNB.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/08_decision_tree.html-DvCdSY_U.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/09_unsupervised_learning.html-mecVkLNO.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/10_recommendation_system.html-DA9FDm-n.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/11_reinforcement_learning.html-DE3L7wzW.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/LA1.html-DRS5DbHl.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/LA2.html-C16x-gv7.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/LA3.html-Cv1o5g7z.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/ML1.html-qZN5Tf6S.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/404.html-CnT2g21v.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/Valine.min-_LyT3bfY.js" as="script"><link rel="prefetch" href="/blog-vp-reco/assets/giscus-aTimukGI-DWEKOTfS.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container show-series show-catalog"><header class="navbar-container not-open"><div class="navbar-inner"><div class="site-brand nav-item"><img class="logo" src="/blog-vp-reco/logo1.svg" alt="AoSaiX"><a href="/blog-vp-reco/" class="site-name can-hide">AoSaiX</a></div><div class="nav-item navbar-links-wrapper" style=""><div><form class="search-box" role="search"><input type="search" autocomplete="off" spellcheck="false" value><!----></form></div><nav class="navbar-links"><!--[--><div class="navbar-links__item"><div class="dropdown-link"><button class="dropdown-link__title" type="button" aria-label="机器学习"><span class="xicon-container left title"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->机器学习<!--]--></span></span><span class="arrow down"></span></button><button class="dropdown-link--mobile__title" type="button" aria-label="机器学习"><span class="title"><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->机器学习<!--]--></span></span></span><span class="right arrow"></span></button><ul style="display:none;" class="dropdown-link__container"><!--[--><li class="dropdown-link__item"><a href="/blog-vp-reco/series/MachineLearning/MachineLearning/01_introduction" class="link" aria-label="机器学习(未整理)"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->机器学习(未整理)<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blog-vp-reco/series/MachineLearning/recommendationSystem/00_introduction" class="link" aria-label="推荐系统(未整理)"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->推荐系统(未整理)<!--]--></span></span><!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-links__item"><div class="dropdown-link"><button class="dropdown-link__title" type="button" aria-label="数据锻造坊"><span class="xicon-container left title"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->数据锻造坊<!--]--></span></span><span class="arrow down"></span></button><button class="dropdown-link--mobile__title" type="button" aria-label="数据锻造坊"><span class="title"><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->数据锻造坊<!--]--></span></span></span><span class="right arrow"></span></button><ul style="display:none;" class="dropdown-link__container"><!--[--><li class="dropdown-link__item"><a href="/blog-vp-reco/series/DataFoundry/Numpy/01_拜入宗门" class="link" aria-label="Numpy"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->Numpy<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blog-vp-reco/series/DataFoundry/Matplotlib/01_xxx" class="link" aria-label="Matplotlib"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->Matplotlib<!--]--></span></span><!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-links__item"><div class="dropdown-link"><button class="dropdown-link__title" type="button" aria-label="深度学习"><span class="xicon-container left title"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->深度学习<!--]--></span></span><span class="arrow down"></span></button><button class="dropdown-link--mobile__title" type="button" aria-label="深度学习"><span class="title"><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->深度学习<!--]--></span></span></span><span class="right arrow"></span></button><ul style="display:none;" class="dropdown-link__container"><!--[--><li class="dropdown-link__item"><a href="/blog-vp-reco/series/DeepLearning/PyTorch/README.md" class="link" aria-label="PyTorch(未整理)"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->PyTorch(未整理)<!--]--></span></span><!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-links__item"><div class="dropdown-link"><button class="dropdown-link__title" type="button" aria-label="计算机视觉"><span class="xicon-container left title"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->计算机视觉<!--]--></span></span><span class="arrow down"></span></button><button class="dropdown-link--mobile__title" type="button" aria-label="计算机视觉"><span class="title"><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->计算机视觉<!--]--></span></span></span><span class="right arrow"></span></button><ul style="display:none;" class="dropdown-link__container"><!--[--><li class="dropdown-link__item"><a href="/blog-vp-reco/series/ComputerVision/ImageProcessing/01_综述" class="link" aria-label="图像处理"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->图像处理<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blog-vp-reco/series/ComputerVision/ImageGeneration/01_综述" class="link" aria-label="生图模型"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->生图模型<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blog-vp-reco/series/ComputerVision/TargetDetection/01_综述" class="link" aria-label="目标检测"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->目标检测<!--]--></span></span><!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-links__item"><div class="dropdown-link"><button class="dropdown-link__title" type="button" aria-label="每日一题"><span class="xicon-container left title"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->每日一题<!--]--></span></span><span class="arrow down"></span></button><button class="dropdown-link--mobile__title" type="button" aria-label="每日一题"><span class="title"><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->每日一题<!--]--></span></span></span><span class="right arrow"></span></button><ul style="display:none;" class="dropdown-link__container"><!--[--><li class="dropdown-link__item"><a href="/blog-vp-reco/blogs/CodeExam/AI/Introduction" class="link" aria-label="AI算法篇"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->AI算法篇<!--]--></span></span><!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-links__item"><div class="dropdown-link"><button class="dropdown-link__title" type="button" aria-label="学思随录"><span class="xicon-container left title"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->学思随录<!--]--></span></span><span class="arrow down"></span></button><button class="dropdown-link--mobile__title" type="button" aria-label="学思随录"><span class="title"><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->学思随录<!--]--></span></span></span><span class="right arrow"></span></button><ul style="display:none;" class="dropdown-link__container"><!--[--><li class="dropdown-link__item"><a href="/blog-vp-reco/docs/update_record" class="link" aria-label="博客更新日志"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->博客更新日志<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blog-vp-reco/docs/2025/vuepress-reco教程" class="link" aria-label="2025年"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->2025年<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blog-vp-reco/docs/desktop_app/README.md" class="link" aria-label="桌面软件开发(未整理)"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->桌面软件开发(未整理)<!--]--></span></span><!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-links__item"><div class="dropdown-link"><button class="dropdown-link__title" type="button" aria-label="逐趣成章"><span class="xicon-container left title"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->逐趣成章<!--]--></span></span><span class="arrow down"></span></button><button class="dropdown-link--mobile__title" type="button" aria-label="逐趣成章"><span class="title"><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->逐趣成章<!--]--></span></span></span><span class="right arrow"></span></button><ul style="display:none;" class="dropdown-link__container"><!--[--><li class="dropdown-link__item"><a href="/blog-vp-reco/blogs/Hobbies/mahjong/01_fargoing" class="link" aria-label="雀神之路(未整理)"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->雀神之路(未整理)<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blog-vp-reco/blogs/Hobbies/musictheroy/00" class="link" aria-label="音乐科学(未整理)"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->音乐科学(未整理)<!--]--></span></span><!--[--><!--]--></a></li><!--]--></ul></div></div><!--]--><!----><span class="xicon-container btn-toggle-dark-mode btn--dark-mode navbar-links__item"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 32 32" style="width:20px;height:20px;font-size:20px;color:;"><path d="M15 2h2v3h-2z" fill="currentColor"></path><path d="M27 15h3v2h-3z" fill="currentColor"></path><path d="M15 27h2v3h-2z" fill="currentColor"></path><path d="M2 15h3v2H2z" fill="currentColor"></path><path d="M5.45 6.884l1.414-1.415l2.121 2.122l-1.414 1.414z" fill="currentColor"></path><path d="M23 7.58l2.121-2.12l1.414 1.414l-2.121 2.121z" fill="currentColor"></path><path d="M23.002 24.416l1.415-1.414l2.12 2.122l-1.413 1.414z" fill="currentColor"></path><path d="M5.47 25.13L7.59 23L9 24.42l-2.12 2.12l-1.41-1.41z" fill="currentColor"></path><path d="M16 8a8 8 0 1 0 8 8a8 8 0 0 0-8-8zm0 14a6 6 0 0 1 0-12z" fill="currentColor"></path></svg></span><ul class="social-links navbar-links__item"><!--[--><!--]--></ul></nav><span class="xicon-container btn-toggle-menus"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 32 32" style="width:20px;height:20px;font-size:20px;color:;"><circle cx="16" cy="8" r="2" fill="currentColor"></circle><circle cx="16" cy="16" r="2" fill="currentColor"></circle><circle cx="16" cy="24" r="2" fill="currentColor"></circle></svg></span></div></div></header><header class="sub-navbar-container not-open"><span class="nav-item"><div class="toggle-series-button" aria-expanded="false" role="button" tabindex="0"><span></span><span></span><span></span></div> Series </span></header><!----><!----><div class="theme-main" style=""><aside class="series-container"><!--[--><!--[--><a aria-current="page" href="/blog-vp-reco/docs/desktop_app/01_compress_photo.html" class="router-link-active router-link-exact-active link router-link-active series-item active series-item active" aria-label="Python桌面压缩图片小工具"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->Python桌面压缩图片小工具<!--]--></span></span><!--[--><!--]--></a><!--]--><!--[--><a href="/blog-vp-reco/docs/desktop_app/02_file_packaging.html" class="link series-item series-item" aria-label="Python文件打包exe方法"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->Python文件打包exe方法<!--]--></span></span><!--[--><!--]--></a><!--]--><!--[--><a href="/blog-vp-reco/docs/desktop_app/03_pyqt5_recording.html" class="link series-item series-item" aria-label="PyQt5使用及踩坑小记"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->PyQt5使用及踩坑小记<!--]--></span></span><!--[--><!--]--></a><!--]--><!--[--><a href="/blog-vp-reco/docs/desktop_app/04_spider_for_ticket.html" class="link series-item series-item" aria-label="Python网络爬虫-爬取12306余票信息"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->Python网络爬虫-爬取12306余票信息<!--]--></span></span><!--[--><!--]--></a><!--]--><!--[--><a href="/blog-vp-reco/docs/desktop_app/README.html" class="link series-item series-item" aria-label="/docs/desktop_app/README.html"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->/docs/desktop_app/README.html<!--]--></span></span><!--[--><!--]--></a><!--]--><!--]--></aside><!--[--><main class="page-container"><div class="page-content"><h1 class="page-title">Python桌面压缩图片小工具</h1><div class="page-info"><span class="xicon-container left"><!--[--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 32 32" class="xicon-icon" style="width:18px;height:18px;font-size:18px;color:;"><path d="M16 4a5 5 0 1 1-5 5a5 5 0 0 1 5-5m0-2a7 7 0 1 0 7 7a7 7 0 0 0-7-7z" fill="currentColor"></path><path d="M26 30h-2v-5a5 5 0 0 0-5-5h-6a5 5 0 0 0-5 5v5H6v-5a7 7 0 0 1 7-7h6a7 7 0 0 1 7 7z" fill="currentColor"></path></svg><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->AOSAI<!--]--></span></span><span class="xicon-container left"><!--[--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 32 32" class="xicon-icon" style="width:18px;height:18px;font-size:18px;color:;"><path d="M26 4h-4V2h-2v2h-8V2h-2v2H6c-1.1 0-2 .9-2 2v20c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 22H6V12h20v14zm0-16H6V6h4v2h2V6h8v2h2V6h4v4z" fill="currentColor"></path></svg><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->2023-08-28<!--]--></span></span><!----><!----><!----></div><div class="theme-reco-md-content"><div><h2 id="序言" tabindex="-1"><a class="header-anchor" href="#序言"><span>序言</span></a></h2><p>萌生出自己做一个压缩图片的小工具的起因啊，一方面是刚好我和我的朋友都打算未来，拍拍照写写博客，但是网络图片一般都要求限制大小，不然渲染以及加载会体验变差，另一方面呢是我刚好在重新刷 python 的书，刚好看到 GUI 图形编程了，就直接上手练练。现在做的差不多了，来写个博客，记录一下。</p><h2 id="wxpython-主程序界面" tabindex="-1"><a class="header-anchor" href="#wxpython-主程序界面"><span>wxPython 主程序界面</span></a></h2><p>GUI 图形编程有很多成熟的库，书上介绍的 wxPython，所以我也就用的这个，当然，最后还是查了官方文档，书毕竟还是介绍的有限。代码我这里就不具体细讲了，我就挑些有意思的地方，有需要看看书《Python 从入门到精通》，b 站看看视频，或者直接去看官方文档也可以。</p><p>这个小工具的主界面呢，我用了类似前端弹性布局的 BoxSizer，他同样也有栅格布局，但是讲真的，用起来我觉得比前端的差了好大一截。我们看下方的代码，虽然我们可以用 flag 属性去控制目标左端对齐、居中对齐等，但是如果不仔细计算总的长宽、border 大小、目标的大小，最后还是达不到我们想要的样子，所以基本上，这个布局呢，相当于也是写死了的。另外，我们先用 layout_row1 容器填充的第一行，再用 layout_row2 填充第二行，再用 layout_root 把前两个容器竖着填充进去，才写成栅格的样式，如果用 flex，直接一次就写完了，所以习惯写前端的人，肯定用这个会疯狂吐槽。</p><p>::: tabs#wxPython1</p><p>@tab 主程序代码#main_code</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">import wx</span>
+<span class="line">import CompressPhotos as CP</span>
+<span class="line"></span>
+<span class="line">class RootFrame(wx.Frame):</span>
+<span class="line">    def __init__(self, parent, id):</span>
+<span class="line">        wx.Frame.__init__(self, parent, id, &#39;AOSAI的实用工具集&#39;, size=(800, 600))</span>
+<span class="line">        panel = wx.Panel(self)</span>
+<span class="line"></span>
+<span class="line">        self.bt_compress_pictures = wx.Button(</span>
+<span class="line">            panel, label=&#39;批量压缩图片&#39;, size=(340, 240))</span>
+<span class="line">        self.bt_compress_pictures.Bind(wx.EVT_BUTTON, self.CompressPictures)</span>
+<span class="line">        self.bt_undefine1 = wx.Button(panel, label=&#39;等待开发&#39;, size=(340, 240))</span>
+<span class="line">        self.bt_undefine2 = wx.Button(panel, label=&#39;等待开发&#39;, size=(340, 240))</span>
+<span class="line">        self.bt_undefine3 = wx.Button(panel, label=&#39;等待开发&#39;, size=(340, 240))</span>
+<span class="line"></span>
+<span class="line">        font = wx.Font(24, wx.DEFAULT, wx.FONTSTYLE_NORMAL, wx.NORMAL)</span>
+<span class="line">        self.bt_compress_pictures.SetFont(font)</span>
+<span class="line">        self.bt_undefine1.SetFont(font)</span>
+<span class="line">        self.bt_undefine2.SetFont(font)</span>
+<span class="line">        self.bt_undefine3.SetFont(font)</span>
+<span class="line"></span>
+<span class="line">        layout_row1 = wx.BoxSizer(wx.HORIZONTAL)</span>
+<span class="line">        layout_row1.Add(self.bt_compress_pictures, proportion=0,</span>
+<span class="line">                        flag=wx.ALIGN_CENTER | wx.LEFT | wx.RIGHT, border=40)</span>
+<span class="line">        layout_row1.Add(self.bt_undefine1, proportion=0,</span>
+<span class="line">                        flag=wx.ALIGN_CENTER | wx.RIGHT, border=40)</span>
+<span class="line"></span>
+<span class="line">        layout_row2 = wx.BoxSizer(wx.HORIZONTAL)</span>
+<span class="line">        layout_row2.Add(self.bt_undefine2, proportion=0,</span>
+<span class="line">                        flag=wx.ALIGN_CENTER | wx.LEFT | wx.RIGHT, border=40)</span>
+<span class="line">        layout_row2.Add(self.bt_undefine3, proportion=0,</span>
+<span class="line">                        flag=wx.ALIGN_CENTER | wx.RIGHT, border=40)</span>
+<span class="line"></span>
+<span class="line">        layout_root = wx.BoxSizer(wx.VERTICAL)</span>
+<span class="line">        layout_root.Add(layout_row1, proportion=0,</span>
+<span class="line">                        flag=wx.ALIGN_CENTER | wx.TOP | wx.BOTTOM, border=30)</span>
+<span class="line">        layout_root.Add(layout_row2, proportion=0,</span>
+<span class="line">                        flag=wx.ALIGN_CENTER | wx.BOTTOM, border=30)</span>
+<span class="line">        panel.SetSizer(layout_root)</span>
+<span class="line"></span>
+<span class="line">    def CompressPictures(self, event):</span>
+<span class="line">        app_compress = wx.App()</span>
+<span class="line">        frame_compress = CP.CompressFrame(parent=None, id=-1)</span>
+<span class="line">        frame_compress.Show()</span>
+<span class="line">        app_compress.MainLoop()</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line">if __name__ == &#39;__main__&#39;:</span>
+<span class="line">    app = wx.App()</span>
+<span class="line">    frame = RootFrame(parent=None, id=-1)</span>
+<span class="line">    frame.Show()</span>
+<span class="line">    app.MainLoop()</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>@tab 运行结果#output1</p><figure><img src="/blog-vp-reco/software/code_desktop/01_wxPython_main.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure><p>:::</p><p>这个小工具箱之后肯定是会继续扩展的，所以我选择了模块化的方式，将其分割成了多个 Python 文件进行书写，我看到官方文档中其实是有子程序的写法的，但是真的很丑，不是我喜欢的风格，放弃了。</p><h2 id="wxpython-压缩程序界面" tabindex="-1"><a class="header-anchor" href="#wxpython-压缩程序界面"><span>wxPython 压缩程序界面</span></a></h2><p>这个压缩小程序我想用户可以做的事是：</p><ul><li>指定压缩的目标值（多少 KB），一般网络图片都会控制在 200KB 之内</li><li>指定文件的输出路径（可选）‘</li><li>通过文件管理器选择需要压缩的图片</li><li>选择压缩方式（后加的，因为 Pillow 压缩不了 PNG 格式图片）</li></ul><p>因为是在练手，加上这个布局的特殊性，这次我选择了通过 pos，元素的左上角位于哪个像素点，再加上 size，元素的大小，将布局写死，固定为这个形式。</p><p>按钮的事件响应呢，需要先绑定响应事件的函数。通过 self.按钮的变量名称.Bind(wx.EVT_BUTTON, self.函数名称)这样一种形式进行绑定。</p><p>::: tabs#wxPython2</p><p>@tab 压缩程序界面代码#compress_layout_code</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">import wx</span>
+<span class="line"></span>
+<span class="line">class CompressFrame(wx.Frame):</span>
+<span class="line"></span>
+<span class="line">    photo_list = ()</span>
+<span class="line"></span>
+<span class="line">    def __init__(self, parent, id):</span>
+<span class="line">        wx.Frame.__init__(self, parent, id, &#39;批量图片压缩工具&#39;, size=(500, 600))</span>
+<span class="line">        panel = wx.Panel(self)</span>
+<span class="line"></span>
+<span class="line">        self.label_expect_size = wx.StaticText(</span>
+<span class="line">            panel, label=&quot;1.预期压缩后的图片为多少KB：请输入罗马数字,\n常见单位转换：1MB=1024KB，2MB=2048KB&quot;, pos=(60, 60), size=(370, 40))</span>
+<span class="line">        self.text_expect_size = wx.TextCtrl(</span>
+<span class="line">            panel, style=wx.TE_LEFT, pos=(60, 105), size=(370, 30))</span>
+<span class="line">        self.label_expect_filePath = wx.StaticText(</span>
+<span class="line">            panel, label=&quot;2.预期存放的文件夹路径：如果未指定路径，默认会在第一张照片\n的路径中，创建新的文件夹CompressedPhotos。例：D:\Blog&quot;, pos=(60, 155), size=(370, 40))</span>
+<span class="line">        self.text_expect_filePath = wx.TextCtrl(</span>
+<span class="line">            panel, style=wx.TE_LEFT, pos=(60, 200), size=(370, 30))</span>
+<span class="line"></span>
+<span class="line">        methods_list = [&quot;OpenCV&quot;, &quot;Pillow&quot;]</span>
+<span class="line">        self.method_choose_rbox = wx.RadioBox(panel, label=&quot;3.请选择压缩方式：JPG/JPEG(Pillow),PNG(OpenCV)&quot;, pos=(</span>
+<span class="line">            60, 240), choices=methods_list, majorDimension=1, style=wx.RA_SPECIFY_ROWS)</span>
+<span class="line"></span>
+<span class="line">        self.label_select_photos = wx.StaticText(</span>
+<span class="line">            panel, label=&quot;4.请选择想压缩的图片：仅支持JPG(JPEG)、PNG格式&quot;, pos=(60, 310), size=(370, 30))</span>
+<span class="line">        self.bt_select_photos = wx.Button(</span>
+<span class="line">            panel, label=&#39;选择图片&#39;, pos=(60, 340), size=(370, 30))</span>
+<span class="line">        self.bt_select_photos.Bind(wx.EVT_BUTTON, self.SelectPhotos)</span>
+<span class="line"></span>
+<span class="line">        self.bt_start_compress = wx.Button(</span>
+<span class="line">            panel, label=&quot;开始压缩&quot;, pos=(100, 440), size=(120, 40))</span>
+<span class="line">        self.bt_start_compress.Bind(wx.EVT_BUTTON, self.StartCompress)</span>
+<span class="line">        self.bt_reset = wx.Button(</span>
+<span class="line">            panel, label=&quot;清空重置&quot;, pos=(260, 440), size=(120, 40))</span>
+<span class="line">        self.bt_reset.Bind(wx.EVT_BUTTON, self.ResetData)</span>
+<span class="line"></span>
+<span class="line">    def StartCompress(self, event):</span>
+<span class="line">        pass</span>
+<span class="line"></span>
+<span class="line">    def ResetData(self, event):</span>
+<span class="line">        pass</span>
+<span class="line"></span>
+<span class="line">    def SelectPhotos(self, event):</span>
+<span class="line">        pass</span>
+<span class="line"></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>@tab 运行结果#output2</p><figure><img src="/blog-vp-reco/software/code_desktop/01_compress_layout.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure><p>:::</p><h2 id="按钮事件响应函数的实现" tabindex="-1"><a class="header-anchor" href="#按钮事件响应函数的实现"><span>按钮事件响应函数的实现</span></a></h2><p>在实现事件响应前，得先理清我们需要做什么。</p><p>清空重置：最简单，将上方 TextCtrl 里的字符串都清空，把单选框回归到第一个选项。</p><p>选择图片：对于程序员而言，写文件路径，进行图片压缩是没问题的，但是对于用户而言，当然还是通过图形界面的文件选择器来选择图片合适，所以首先就是要实现文件选择器的功能。其次，我们要将取得的图片文件的路径保存到一个序列里面，对其进行格式的筛选判断，如果有非 JPG、PNG 格式的照片，需要提醒用户重新进行选择。</p><p>开始压缩：这个函数内的判断最多。首先因为文件输出路径是可选的，我们要对输出文件路径进行判断，得出一个正确的输出路径。其次，要判断用户输入的目标文件大小是否正确，是否是数值类型，因为输入框得到的数据都是字符串 str，我们还需要将其类型转换变成 int 类型。第三，我们要判断需要压缩的图像，是否已经读取到，是否用户已经成功选择了图像。第四，才是开始压缩这个步骤。</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">import tkinter as tk</span>
+<span class="line">from tkinter import filedialog</span>
+<span class="line">import re</span>
+<span class="line"></span>
+<span class="line">class CompressFrame(wx.Frame):</span>
+<span class="line"></span>
+<span class="line">    photo_list = ()</span>
+<span class="line"></span>
+<span class="line">    def StartCompress(self, event):</span>
+<span class="line">        expect_folder = &quot;&quot;</span>
+<span class="line">        expect_size = 200</span>
+<span class="line">        size = self.text_expect_size.GetValue()</span>
+<span class="line">        if size != &quot;&quot; and re.search(&#39;[^\d]&#39;, size) != None:</span>
+<span class="line">            wx.MessageBox(&quot;您输入的期望压缩值有误，请修改。&quot;)</span>
+<span class="line">            return 0</span>
+<span class="line">        else:</span>
+<span class="line">            expect_size = int(size)</span>
+<span class="line"></span>
+<span class="line">        if self.photo_list == ():</span>
+<span class="line">            wx.MessageBox(&quot;您还未选择需要压缩的图片！&quot;)</span>
+<span class="line">            return 0</span>
+<span class="line"></span>
+<span class="line">        if self.text_expect_filePath.GetValue() == &quot;&quot;:</span>
+<span class="line">            base_path = os.path.dirname(self.photo_list[0])</span>
+<span class="line">            expect_folder = base_path + &quot;/CompressedPhotos&quot;</span>
+<span class="line">            if not os.path.exists(expect_folder):</span>
+<span class="line">                os.mkdir(expect_folder)</span>
+<span class="line">        else:</span>
+<span class="line">            path = self.text_expect_filePath.GetValue()</span>
+<span class="line">            if os.path.isdir(path):</span>
+<span class="line">                expect_folder = path</span>
+<span class="line">            else:</span>
+<span class="line">                wx.MessageBox(&quot;您输入的目标文件夹路径有误！\n请重新修正！&quot;)</span>
+<span class="line">                return 0</span>
+<span class="line"></span>
+<span class="line">    def ResetData(self, event):</span>
+<span class="line">        self.text_expect_size.Clear()</span>
+<span class="line">        self.text_expect_filePath.Clear()</span>
+<span class="line">        self.method_choose_rbox.SetStringSelection(&quot;OpenCV&quot;)</span>
+<span class="line"></span>
+<span class="line">    def SelectPhotos(self, event):</span>
+<span class="line">        select = tk.Tk()</span>
+<span class="line">        select.withdraw()</span>
+<span class="line"></span>
+<span class="line">        # folder_path = filedialog.askdirectory()   # 选择文件夹</span>
+<span class="line">        file_path = filedialog.askopenfilenames()   # 选择多个文件</span>
+<span class="line"></span>
+<span class="line">        for index, item in enumerate(file_path):</span>
+<span class="line">            if not item.endswith(&quot;.jpg&quot;) and not item.endswith(&quot;.jpeg&quot;) and not item.endswith(&quot;.png&quot;):</span>
+<span class="line">                wx.MessageBox(&quot;您选择的图片存在格式错误的情况！\n请重新选择！&quot;)</span>
+<span class="line">                break</span>
+<span class="line">            if index == (len(file_path) - 1):</span>
+<span class="line">                self.photo_list = file_path</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="压缩图像的实现-pillow、opencv" tabindex="-1"><a class="header-anchor" href="#压缩图像的实现-pillow、opencv"><span>压缩图像的实现（Pillow、OpenCV）</span></a></h2><p>图片压缩的原理，简单来说就是，我们把一张图片提取成矩阵形式，经过算法进行一系列的矩阵运算后，可以出现很多个零，这个零越多，就意味着可以压缩的比例越大。</p><p>JPG、JPEG 这个格式的图片呢，最常用于网络传输，但它在不改变图像尺寸，也就是分辨率的情况下，如果压过头，就会失真很严重，它是有损压缩。</p><p>PNG 这个格式的图片是无损压缩，他是可逆的。也就意味着一般情况下，PNG 格式的照片会比 JPG 的要大。</p><p>我们将压缩图像的功能，封装到一个函数中，批量压缩的实现呢，循环调用这个函数即可。</p><p>Pillow 的压缩代码很简单，先用 PIL 模块中的 Image 方法打开图片，再用 save 保存的时候，选择保存的质量 quality 即可。一般要求 quality 不能大于 95，不然压缩可能无效。</p><p>OpenCV 的压缩代码基本和 Pillow 类似，但是存在一个问题，OpenCV 原本是不支持中文路径的，可能只能支持英文路径，而我们日常使用大概率都会有中文，不管是文件夹名称，还是图片名称，所以我们要进行一个可以读取中文路径的修正。</p><p>::: tabs</p><p>@tab Pillow 压缩 JPG/JPEG</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">def _CompressByPillow(self, input, output, expect_size, quality1=95):</span>
+<span class="line">    # 将原图的单位转化成KB  Bytes/1024=KB</span>
+<span class="line">    photo_size = os.path.getsize(input) / 1024</span>
+<span class="line"></span>
+<span class="line">    while photo_size &gt; expect_size:</span>
+<span class="line">        img = Image.open(input)</span>
+<span class="line">        img.save(output, quality=quality1)</span>
+<span class="line">        if quality1 &lt;= 0:</span>
+<span class="line">            break</span>
+<span class="line">        quality1 -= 5</span>
+<span class="line">        # 将压缩后的图片单位转化为KB，同时赋值给photo_size，进行循环判断</span>
+<span class="line">        photo_size = os.path.getsize(output) / 1024</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>@tab OpenCV 压缩 PNG 原版</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">def _CompressByOpenCV(self, input, output, expect_size, ratio=1):</span>
+<span class="line">        photo_size = os.path.getsize(input) / 1024</span>
+<span class="line"></span>
+<span class="line">        while photo_size &gt; expect_size:</span>
+<span class="line">            img = cv2.imread(input, 1)</span>
+<span class="line">            cv2.imwrite(output, img, [cv2.IMWRITE_PNG_COMPRESSION, ratio])</span>
+<span class="line">            if ratio &gt;= 9:</span>
+<span class="line">                break</span>
+<span class="line">            ratio += 1</span>
+<span class="line">            photo_size = os.path.getsize(output) / 1024</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>@tab OpenCV 可读取中文路径</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">def _CompressByOpenCV(self, input, output, expect_size, ratio=1):</span>
+<span class="line">    photo_size = os.path.getsize(input) / 1024</span>
+<span class="line"></span>
+<span class="line">    while photo_size &gt; expect_size:</span>
+<span class="line">        img = cv2.imdecode(np.fromfile(input, dtype=np.uint8), 1)</span>
+<span class="line">        params = [cv2.IMWRITE_PNG_COMPRESSION, ratio]</span>
+<span class="line">        cv2.imencode(&#39;.png&#39;, img, params)[1].tofile(output)</span>
+<span class="line">        if ratio &gt;= 9:</span>
+<span class="line">            break</span>
+<span class="line">        ratio += 1</span>
+<span class="line">        photo_size = os.path.getsize(output) / 1024</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>@tab 循环批量调用</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">def StartCompress(self, event):</span>
+<span class="line">    # 验证等省略，见上一个代码块</span>
+<span class="line"></span>
+<span class="line">    method_name = self.method_choose_rbox.GetStringSelection()</span>
+<span class="line">        if method_name == &quot;Pillow&quot;:</span>
+<span class="line">            for index, item in enumerate(self.photo_list):</span>
+<span class="line">                new_photo = expect_folder + &quot;/&quot; + str(index) + &quot;.jpeg&quot;</span>
+<span class="line">                self._CompressByPillow(item, new_photo, expect_size)</span>
+<span class="line">            os.startfile(expect_folder)</span>
+<span class="line">            self.ResetData(wx.EVT_BUTTON)</span>
+<span class="line">        if method_name == &quot;OpenCV&quot;:</span>
+<span class="line">            for index, item in enumerate(self.photo_list):</span>
+<span class="line">                new_photo = expect_folder + &quot;/&quot; + str(index) + &quot;.png&quot;</span>
+<span class="line">                self._CompressByOpenCV(item, new_photo, expect_size)</span>
+<span class="line">            os.startfile(expect_folder)</span>
+<span class="line">            self.ResetData(wx.EVT_BUTTON)</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>:::</p><h2 id="二分法优化压缩步骤" tabindex="-1"><a class="header-anchor" href="#二分法优化压缩步骤"><span>二分法优化压缩步骤</span></a></h2><p>我在已有的博客中，借鉴了循环压缩的方法：从高质量不断递减。如果是 PNG 倒还好，压缩比率只是 0-9，最多也就 9 次，但是 JPG 从 95 每次减 5，最极端情况递减到 0，这可就是 20 次，一张图片 20 次循环，100 张图片，那个处理效率就会爆炸，因此，打算通过二分法寻找最优解。</p><p>我们给定一个左边界 left，一个右边界 right，中间值 mid=(left+right)/2。如果在中间值 mid 的压缩质量下，输出图片大小高于目标大小，我们让右边界 right=mid，如果在中间值 mid 的压缩质量下，输出图片大小小于目标大小，我们就让左边界值 left=mid，然后再循环进行比较。终止条件就是 rigth - left &lt;= 2。</p><p>::: tabs</p><p>@tab 优化后的 Pillow</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">def _CompressByPillow(self, input, output, expect_size):</span>
+<span class="line">    photo_size = os.path.getsize(input) / 1024</span>
+<span class="line">    left = 0</span>
+<span class="line">    right = 100</span>
+<span class="line">    while True:</span>
+<span class="line">        mid = int((left+right)/2)</span>
+<span class="line">        img = Image.open(input)</span>
+<span class="line">        img.save(output, quality=mid)</span>
+<span class="line">        photo_size = os.path.getsize(output) / 1024</span>
+<span class="line">        if right - left &lt;= 1:</span>
+<span class="line">            break</span>
+<span class="line">        if photo_size &gt;= expect_size:</span>
+<span class="line">            right = mid</span>
+<span class="line">        else:</span>
+<span class="line">            left = mid</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>@tab 优化后的 OpenCV</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">def _CompressByOpenCV(self, input, output, expect_size):</span>
+<span class="line">    photo_size = os.path.getsize(input) / 1024</span>
+<span class="line">    left = 0</span>
+<span class="line">    right = 9</span>
+<span class="line">    while True:</span>
+<span class="line">        mid = int((left+right)/2)</span>
+<span class="line">        img = cv2.imdecode(np.fromfile(input, dtype=np.uint8), -1)</span>
+<span class="line">        params = [cv2.IMWRITE_PNG_COMPRESSION, mid]</span>
+<span class="line">        cv2.imencode(&#39;.png&#39;, img, params)[1].tofile(output)</span>
+<span class="line">        photo_size = os.path.getsize(output) / 1024</span>
+<span class="line">        if right - left &lt;= 1:</span>
+<span class="line">            break</span>
+<span class="line">        if photo_size &gt;= expect_size:</span>
+<span class="line">            left = mid</span>
+<span class="line">        else:</span>
+<span class="line">            right = mid</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>:::</p><h2 id="增加压缩过程进度条" tabindex="-1"><a class="header-anchor" href="#增加压缩过程进度条"><span>增加压缩过程进度条</span></a></h2><p>图片如果太多，压缩是要一定过程的，如果没有进度条，用户不知道到底多久才能完成，就会造成体验降低的结果。因此我们添加一下这个功能。</p><p>这里用到了 tkinter 模块的 geometry 方法，它可以生成一个大小为自定义的显示框。然后使用 tkinter.ttk 模块，向其中添加进度条。进度条的变动，是需要和压缩的循环体结构挂钩的，每压缩一个，进度增加一个。此处代码仅拿 JPG 循环体举例，PNG 是一样的。</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">import tkinter as tk</span>
+<span class="line">from tkinter import ttk</span>
+<span class="line">import time</span>
+<span class="line"></span>
+<span class="line">root = tk.Tk()</span>
+<span class="line">    root.geometry(&#39;500x100&#39;)</span>
+<span class="line">    progress = ttk.Progressbar(root)</span>
+<span class="line">    progress.pack(pady=20)</span>
+<span class="line">    progress[&#39;length&#39;] = 400</span>
+<span class="line">    progress[&#39;maximum&#39;] = len(self.photo_list)</span>
+<span class="line">    progress[&#39;value&#39;] = 0</span>
+<span class="line"></span>
+<span class="line">    method_name = self.method_choose_rbox.GetStringSelection()</span>
+<span class="line">    if method_name == &quot;JPG/JPEG&quot;:</span>
+<span class="line">        for index, item in enumerate(self.photo_list):</span>
+<span class="line">            new_photo = expect_folder + &quot;/&quot; + str(index) + &quot;.jpeg&quot;</span>
+<span class="line">            self._CompressByPillow(item, new_photo, expect_size)</span>
+<span class="line">            progress[&#39;value&#39;] += 1</span>
+<span class="line">            root.update()</span>
+<span class="line">            time.sleep(0.05)</span>
+<span class="line">        root.destroy()</span>
+<span class="line">        os.startfile(expect_folder)</span>
+<span class="line">        self.ResetData(wx.EVT_BUTTON)</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="打包成-exe-文件" tabindex="-1"><a class="header-anchor" href="#打包成-exe-文件"><span>打包成 exe 文件</span></a></h2><p>Python 文件打包常见的有 Pyinstaller 和 Nuitka，这里我们选择使用前者。</p><p>首先先配置一个虚拟环境，Python 文件的打包啊，他会扫描当前环境下的所有模块，如果下载的没有用到的模块很多，或者直接使用了 Anaconda，那打包出来的文件就会非常大。如果使用 Anaconda，可以直接使用它自带的 conda 虚拟环境工具。分为四个步骤：创建环境，激活环境，下载需要的模块，开始打包。</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line"># 创建Python版本为x.x的虚拟环境</span>
+<span class="line">conda create -n folder_name python==x.x</span>
+<span class="line"></span>
+<span class="line"># 激活使用</span>
+<span class="line">conda activate folder_name</span>
+<span class="line"></span>
+<span class="line"># 本次虚拟环境需要安装的模块</span>
+<span class="line">pip install wxPython</span>
+<span class="line">pip install opencv-python</span>
+<span class="line">pip install numpy</span>
+<span class="line">pip install Pillow</span>
+<span class="line"></span>
+<span class="line"># 先创建 .spec文件，按照自己需求修改里面内容</span>
+<span class="line">pyi-makespec -w main.py</span>
+<span class="line"></span>
+<span class="line"># 再开始打包</span>
+<span class="line">pyinstaller main.spec</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>关于打包的内容详细我还写了另一篇博文，有兴趣可以看看：<a class="route-link" href="/blog-vp-reco/docs/desktop_app/02_file_packaging.html">Python 文件打包成 Exe 文件</a></p><p>完稿时间：2023 年 9 月 2 日</p></div></div><footer class="page-meta"><!----><!----></footer><nav class="page-nav"><p class="hasNext inner"><!----><span class="page-nav-item next">Python文件打包exe方法 → </span></p></nav><!----></div><div class="page-catalog-container"><h5 class="tip">ON THIS PAGE</h5><ul><!--[--><!--[--><li class="page-catalog-menu-depth_2"><a aria-current="page" href="/blog-vp-reco/docs/desktop_app/01_compress_photo.html#序言" class="router-link-active router-link-exact-active link page-catalog-item page-catalog-item" aria-label="序言"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->序言<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_2"><a aria-current="page" href="/blog-vp-reco/docs/desktop_app/01_compress_photo.html#wxpython-主程序界面" class="router-link-active router-link-exact-active link page-catalog-item page-catalog-item" aria-label="wxPython 主程序界面"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->wxPython 主程序界面<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_2"><a aria-current="page" href="/blog-vp-reco/docs/desktop_app/01_compress_photo.html#wxpython-压缩程序界面" class="router-link-active router-link-exact-active link page-catalog-item page-catalog-item" aria-label="wxPython 压缩程序界面"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->wxPython 压缩程序界面<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_2"><a aria-current="page" href="/blog-vp-reco/docs/desktop_app/01_compress_photo.html#按钮事件响应函数的实现" class="router-link-active router-link-exact-active link page-catalog-item page-catalog-item" aria-label="按钮事件响应函数的实现"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->按钮事件响应函数的实现<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_2"><a aria-current="page" href="/blog-vp-reco/docs/desktop_app/01_compress_photo.html#压缩图像的实现-pillow、opencv" class="router-link-active router-link-exact-active link page-catalog-item page-catalog-item" aria-label="压缩图像的实现（Pillow、OpenCV）"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->压缩图像的实现（Pillow、OpenCV）<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_2"><a aria-current="page" href="/blog-vp-reco/docs/desktop_app/01_compress_photo.html#二分法优化压缩步骤" class="router-link-active router-link-exact-active link page-catalog-item page-catalog-item" aria-label="二分法优化压缩步骤"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->二分法优化压缩步骤<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_2"><a aria-current="page" href="/blog-vp-reco/docs/desktop_app/01_compress_photo.html#增加压缩过程进度条" class="router-link-active router-link-exact-active link page-catalog-item page-catalog-item" aria-label="增加压缩过程进度条"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->增加压缩过程进度条<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_2"><a aria-current="page" href="/blog-vp-reco/docs/desktop_app/01_compress_photo.html#打包成-exe-文件" class="router-link-active router-link-exact-active link page-catalog-item page-catalog-item" aria-label="打包成 exe 文件"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->打包成 exe 文件<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--]--></ul></div></main><!--]--></div></div><!--[--><!----><!----><!--]--><!--]--></div>
+    <script type="module" src="/blog-vp-reco/assets/app-knK7nh4Q.js" defer></script>
+  </body>
+</html>

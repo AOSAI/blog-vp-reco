@@ -1,4 +1,13 @@
 import recoTheme from "vuepress-theme-reco";
+import { getMdChildren } from "./plugins/seriesTool";
+
+// 定义侧边栏路径常量
+const ROOT_CODE_AI = "blogs/CodeExam/AI";
+const ROOT_HOBBIES = "blogs/Hobbies";
+const ROOT_ML = "series/MachineLearning";
+const ROOT_DL = "series/DeepLearning";
+const ROOT_CV = "series/ComputerVision";
+const ROOT_DF = "series/dataFoundry";
 
 export default recoTheme({
   logo: "/logo1.svg",
@@ -7,184 +16,97 @@ export default recoTheme({
   // docsRepo: "https://github.com/vuepress-reco/vuepress-theme-reco-next",
   docsBranch: "main",
   docsDir: "example",
-  lastUpdatedText: "",
+  lastUpdatedText: "Git仓库提交时间",
 
   // autoSetSeries: true, // 自动设置 series
   // series 为原 sidebar
   series: {
+    "/series/MachineLearning": [
+      { text: "机器学习", children: getMdChildren(ROOT_ML, "MachineLearning") },
+      { text: "推荐系统", children: getMdChildren(ROOT_ML, "recommendationSystem") },
+    ],
+    "/series/DeepLearning": [
+      { text: "机器学习", children: getMdChildren(ROOT_DL, "PyTorch") },
+    ],
+    "/series/DataFoundry": [
+      { text: "Numpy", children: getMdChildren(ROOT_DF, "Numpy") },
+      { text: "Matplotlib", children: getMdChildren(ROOT_DF, "Matplotlib") },
+    ],
     "/series/ComputerVision": [
-      {
-        text: "图像处理",
-        children: [
-          "/ImageProcessing/01_综述",
-          "/ImageProcessing/02_基础操作",
-          "/ImageProcessing/03_噪声与滤波",
-          "/ImageProcessing/04_信号与图像",
-          "/ImageProcessing/05_形态学与特征",
-          "/ImageProcessing/06_压缩与编码",
-        ],
-      },
-      {
-        text: "生图模型",
-        children: [
-          "/ImageGeneration/01_综述",
-          "/ImageGeneration/02_xxx",
-          "/ImageGeneration/02_xxx",
-        ],
-      },
-      {
-        text: "目标检测",
-        children: [
-          "/TargetDetection/01_综述",
-          "/TargetDetection/02_xxx",
-          "/TargetDetection/02_xxx",
-        ],
-      },
+      { text: "图像处理", children: getMdChildren(ROOT_CV, "ImageProcessing") },
+      { text: "生图模型", children: getMdChildren(ROOT_CV, "ImageGeneration") },
+      { text: "目标检测", children: getMdChildren(ROOT_CV, "TargetDetection") },
     ],
-    "/blogs": [
-      {
-        text: "桌面软件开发",
-        children: [
-          "/desktop_app/README.md",
-          "/desktop_app/01_compress_photo",
-          "/desktop_app/02_file_packaging",
-          "/desktop_app/03_pyqt5_recording",
-          "/desktop_app/04_spider_for_ticket",
-        ],
-      },
-      {
-        text: "机器学习",
-        children: [
-          "/intelligence/MachineLearning/README.md",
-          "/intelligence/MachineLearning/02_linear_regression",
-          "/intelligence/MachineLearning/03_linear_regression",
-          "/intelligence/MachineLearning/04_classification",
-          "/intelligence/MachineLearning/05_deep_learning",
-          "/intelligence/MachineLearning/06_tensorflow",
-          "/intelligence/MachineLearning/07_model_evaluation",
-          "/intelligence/MachineLearning/08_decision_tree",
-          "/intelligence/MachineLearning/09_unsupervised_learning",
-          "/intelligence/MachineLearning/10_recommendation_system",
-          "/intelligence/MachineLearning/11_reinforcement_learning",
-        ],
-      },
-      {
-        text: "Matplotlib",
-        children: [
-          "/intelligence/Matplotlib/README.md",
-          "/intelligence/Matplotlib/01.md",
-        ],
-      },
-      {
-        text: "Numpy",
-        children: [
-          "/intelligence/Numpy/README.md",
-          "/intelligence/Numpy/01.md",
-        ],
-      },
-      {
-        text: "PyTorch",
-        children: [
-          "/intelligence/PyTorch/README.md",
-          "/intelligence/PyTorch/01_base",
-          "/intelligence/PyTorch/02_project1",
-          "/intelligence/PyTorch/02_project2",
-          "/intelligence/PyTorch/03_project1",
-        ],
-      },
-      {
-        text: "推荐系统",
-        children: [
-          "/intelligence/recommendationSystem/README.md",
-          "/intelligence/recommendationSystem/01_recommend_model",
-        ],
-      },
-      {
-        text: "雀神之路",
-        children: [
-          "/dobetter/mahjong/README.md",
-          "/dobetter/mahjong/01_fargoing",
-          "/dobetter/mahjong/02_sichuan",
-        ],
-      },
-      {
-        text: "音乐之旅",
-        children: [
-          "/dobetter/musictheroy/README.md",
-          "/dobetter/musictheroy/01.md",
-        ],
-      },
+    "/blogs/CodeExam/AI": [
+      { text: "线性代数", children: getMdChildren(ROOT_CODE_AI, "LinearAlgebra") },
+      { text: "机器学习", children: getMdChildren(ROOT_CODE_AI, "MachineLearning") },
     ],
+    "/blogs/Hobbies": [
+      { text: "雀神之路", children: getMdChildren(ROOT_HOBBIES, "mahjong") },
+      { text: "音乐之旅", children: getMdChildren(ROOT_HOBBIES, "musictheroy") },
+    ],
+    "/docs/desktop_app": getMdChildren("docs/desktop_app")
   },
   navbar: [
     {
-      text: "旧博客迁移(未整理)",
+      text: "机器学习",
       children: [
-        {
-          text: "桌面软件开发",
-          link: "/blogs/desktop_app/README.md",
-        },
-        {
-          text: "机器学习",
-          link: "/blogs/intelligence/MachineLearning/readme",
-        },
-        {
-          text: "Matplotlib",
-          link: "/blogs/intelligence/Matplotlib/readme",
-        },
-        {
-          text: "Numpy",
-          link: "/blogs/intelligence/Numpy/readme",
-        },
-        {
-          text: "PyTorch",
-          link: "/blogs/intelligence/PyTorch/readme",
-        },
-        {
-          text: "推荐系统",
-          link: "/blogs/intelligence/recommendationSystem/readme",
-        },
-        {
-          text: "雀神之路",
-          link: "/blogs/dobetter/mahjong/README",
-        },
-        {
-          text: "音乐之旅",
-          link: "/blogs/dobetter/musictheroy/README",
-        },
+        { text: "机器学习(未整理)", link: "/series/MachineLearning/MachineLearning/01_introduction" },
+        { text: "推荐系统(未整理)", link: "/series/MachineLearning/recommendationSystem/00_introduction" },
+      ],
+    },
+    {
+      text: "数据锻造坊",
+      children: [
+        { text: "Numpy", link: "/series/DataFoundry/Numpy/01_拜入宗门" },
+        { text: "Matplotlib", link: "/series/DataFoundry/Matplotlib/01_xxx" },
+      ],
+    },
+    {
+      text: "深度学习",
+      children: [
+        { text: "PyTorch(未整理)", link: "/series/DeepLearning/PyTorch/README.md" },
       ],
     },
     {
       text: "计算机视觉",
       children: [
-        {
-          text: "图像处理",
-          link: "/series/ComputerVision/ImageProcessing/01_综述",
-        },
-        {
-          text: "生图模型",
-          link: "/series/ComputerVision/ImageGeneration/01_综述",
-        },
-        {
-          text: "目标检测",
-          link: "/series/ComputerVision/TargetDetection/01_综述",
-        },
+        { text: "图像处理", link: "/series/ComputerVision/ImageProcessing/01_综述" },
+        { text: "生图模型", link: "/series/ComputerVision/ImageGeneration/01_综述" },
+        { text: "目标检测", link: "/series/ComputerVision/TargetDetection/01_综述"},
+      ],
+    },
+    {
+      text: "每日一题",
+      children: [
+        { text: "AI算法篇", link: "/blogs/CodeExam/AI/Introduction" },
+        // { text: "AI-机器学习", link: "/docs/2025/vuepress-reco教程" },
+        // { text: "AI-深度学习", link: "/docs/2025/vuepress-reco教程" },
+        // { text: "AI-CV与NLP", link: "/docs/2025/vuepress-reco教程" },
+        // { text: "AI-笔试真题", link: "/docs/2025/vuepress-reco教程" },
       ],
     },
     {
       text: "学思随录",
       children: [
+        { text: "博客更新日志", link: "/docs/update_record" },
         { text: "2025年", link: "/docs/2025/vuepress-reco教程" },
-        // { text: "vuepress-theme-reco", link: "/blogs/other/guide" },
+        { text: "桌面软件开发(未整理)", link: "/docs/desktop_app/README.md" },  
       ],
     },
     {
-      text: "星河驿站",
+      text: "逐趣成章",
       children: [
-        { text: "烟火人间", link: "#" },
-        { text: "逐趣成章", link: "#" },
+        { text: "雀神之路(未整理)", link: "/blogs/Hobbies/mahjong/01_fargoing" },
+        { text: "音乐科学(未整理)", link: "/blogs/Hobbies/musictheroy/00" },
       ],
     },
+    // {
+    //   text: "烟火人间",
+    //   children: [
+    //     { text: "烟火人间", link: "#" },
+    //   ],
+    // },
   ],
   // bulletin: {
   //   body: [
