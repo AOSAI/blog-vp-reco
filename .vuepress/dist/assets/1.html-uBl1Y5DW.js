@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a}from"./app-BLf5ix8B.js";const c={};function o(r,n){return a(),e("div")}const l=t(c,[["render",o]]),i=JSON.parse('{"path":"/categories/tuxiangchuli/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{l as comp,i as data};

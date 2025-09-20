@@ -1,7 +1,7 @@
 import { defineUserConfig } from "vuepress";
 import { viteBundler } from "@vuepress/bundler-vite";
 import { webpackBundler } from "@vuepress/bundler-webpack";
-import theme from "./theme.ts";
+import theme from "./theme/theme.ts";
 import { extendsMarkdown, plugins } from "./plugins/plugins.ts";
 
 export default defineUserConfig({

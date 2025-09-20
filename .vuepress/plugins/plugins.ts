@@ -5,6 +5,7 @@ import type MarkdownIt from "markdown-it";
 // @vuepress/plugin 插件
 import { markdownImagePlugin } from "@vuepress/plugin-markdown-image";
 import { markdownMathPlugin } from "@vuepress/plugin-markdown-math";
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
 
 // markdown-it 扩展配置
 export const extendsMarkdown = (md: MarkdownIt) => {
@@ -21,5 +22,12 @@ export const plugins = [
     lazyload: true, //图片懒加载
     mark: false, //图片标记
     size: true, //图片大小
+  }),
+  mediumZoomPlugin({
+    selector: 'img',
+    zoomOptions: {
+      margin: 16,
+    },
+    delay: 300,
   }),
 ];
