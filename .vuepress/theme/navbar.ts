@@ -29,7 +29,7 @@ export const navbar = [
       text: "计算机视觉",
       children: [
         { text: "图像处理", link: "/blogs/ComputerVision/ImageProcessing/01_综述" },
-        { text: "生图模型", link: "/blogs/ComputerVision/ImageGeneration/01_综述" },
+        { text: "图像生成", link: "/blogs/ComputerVision/ImageGeneration/01_综述" },
         { text: "目标检测", link: "/blogs/ComputerVision/TargetDetection/01_综述"},
       ],
     },
@@ -49,8 +49,8 @@ export const navbar = [
         {
           text: 'Reco内置',
           children: [
-            { text: "分类", link: '/categories/Blog/1' },
-            { text: "标签", link: '/tags/Blog/1' },
+            // { text: "分类", link: '/categories/meiriyiti/1' },
+            // { text: "标签", link: '/tags/AItiku/1' },
             { text: "时间轴", link: '/timeline' },
             { text: "友情链接", link: '/friendship-link' },
           ],

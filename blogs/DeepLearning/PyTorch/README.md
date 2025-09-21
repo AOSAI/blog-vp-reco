@@ -1,9 +1,9 @@
 ---
 title: PyTorch入门手册
 date: 2024-09-11
-category:
+categories:
   - PyTorch
-tag:
+tags:
   - PyTorch基础
   - PyTorch安装教程
 ---

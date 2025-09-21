@@ -1,11 +1,9 @@
 ---
 title: 2-4 决策树模型
-order: 8
-author: AOSAI
 date: 2024-08-06
-category:
+categories:
   - 机器学习
-tag:
+tags:
   - 决策树
 ---
 

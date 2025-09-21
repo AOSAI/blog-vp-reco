@@ -1,11 +1,9 @@
 ---
 title: 2-2 神经网络进阶
-order: 6
-author: AOSAI
 date: 2024-02-03
-category:
+categories:
   - 机器学习
-tag:
+tags:
   - 神经网络
   - 深度学习
   - TensorFlow

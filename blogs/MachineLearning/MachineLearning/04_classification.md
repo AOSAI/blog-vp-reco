@@ -1,11 +1,9 @@
 ---
 title: 1-3 分类问题
-order: 4
-author: AOSAI
 date: 2023-11-11
-category:
+categories:
   - 机器学习
-tag:
+tags:
   - 机器学习
 ---
 

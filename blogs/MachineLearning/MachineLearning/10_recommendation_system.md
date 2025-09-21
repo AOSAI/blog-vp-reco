@@ -1,11 +1,9 @@
 ---
 title: 3-2 推荐系统
-order: 10
-author: AOSAI
 date: 2024-08-22
-category:
+categories:
   - 机器学习
-tag:
+tags:
   - 推荐系统
 ---
 

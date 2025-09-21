@@ -1,11 +1,9 @@
 ---
 title: 1-1 一元线性回归
-order: 2
-author: AOSAI
 date: 2023-10-31
-category:
+categories:
   - 机器学习
-tag:
+tags:
   - 机器学习
 ---
 

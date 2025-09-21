@@ -1,8 +1,10 @@
 ---
 title: 陕西麻将
-date: 2023/09/20
-category:
-  - 目录
+date: 2023-09-20
+categories:
+  - 麻将秘籍
+tags:
+  - 陕西麻将
 ---
 
 ## 通识课

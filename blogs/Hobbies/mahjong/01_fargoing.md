@@ -1,16 +1,10 @@
 ---
 title: 麻将通识
-author: AOSAI
-date: 2023/09/20
-category:
+date: 2023-09-20
+categories:
   - 麻将秘籍
-tag:
+tags:
   - 麻将规则
-
-sticky: false # 此页面会在文章列表置顶
-star: false # 此页面会出现在文章收藏中
-footer: 等我攒够六便士，就去寻找月亮
-copyright: AOSAI
 ---
 
 ## 定座次/定风位

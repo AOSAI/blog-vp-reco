@@ -1,9 +1,9 @@
 ---
 title: PyTorch基础知识
 date: 2024-09-13
-category:
+categories:
   - PyTorch
-tag:
+tags:
   - PyTorch基础
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: 画布结构与常见图
 date: 2023-11-20
-category:
+categories:
   - 数据锻造坊
-tag:
+tags:
   - 机器学习
   - Matplotlib
 ---

@@ -1,11 +1,9 @@
 ---
 title: 0-0 机器学习目录与概述
-index: True
-author: AOSAI
 date: 2023-10-28
-category:
+categories:
   - 机器学习
-tag:
+tags:
   - 机器学习
 ---
 

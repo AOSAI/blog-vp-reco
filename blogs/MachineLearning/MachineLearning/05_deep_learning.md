@@ -1,11 +1,9 @@
 ---
 title: 2-1 神经网络初探
-order: 5
-author: AOSAI
 date: 2024-02-02
-category:
+categories:
   - 机器学习
-tag:
+tags:
   - 神经网络
   - 深度学习
 ---

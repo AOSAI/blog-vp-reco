@@ -1,11 +1,9 @@
 ---
 title: 2-3 模型评估
-order: 7
-author: AOSAI
 date: 2024-04-23
-category:
+categories:
   - 机器学习
-tag:
+tags:
   - 模型评估
 ---
 

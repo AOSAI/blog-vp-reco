@@ -1,11 +1,9 @@
 ---
 title: 3-1 无监督学习
-order: 9
-author: AOSAI
 date: 2024-08-16
-category:
+categories:
   - 机器学习
-tag:
+tags:
   - 无监督学习
   - 聚类算法
   - 异常检测算法

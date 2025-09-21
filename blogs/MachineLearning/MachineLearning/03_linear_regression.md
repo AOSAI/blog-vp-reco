@@ -1,11 +1,9 @@
 ---
 title: 1-2 多元线性回归
-order: 3
-author: AOSAI
 date: 2023-11-07
-category:
+categories:
   - 机器学习
-tag:
+tags:
   - 机器学习
 ---
 

@@ -3,15 +3,10 @@ title: 推荐系统基础 - 02
 order: 1
 author: AOSAI
 date: 2023-09-28
-category:
+categories:
   - 推荐系统
-tag:
+tags:
   - 推荐系统
-
-sticky: false # 此页面会在文章列表置顶
-star: false # 此页面会出现在文章收藏中
-footer: 等我攒够六便士，就去寻找月亮
-copyright: AOSAI
 ---
 
 ## 一、推荐模型构建流程

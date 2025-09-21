@@ -1,11 +1,9 @@
 ---
 title: 3-3 强化学习
-order: 11
-author: AOSAI
 date: 2024-08-28
-category:
+categories:
   - 机器学习
-tag:
+tags:
   - 强化学习
 ---
 

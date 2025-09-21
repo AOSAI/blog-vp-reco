@@ -1,11 +1,11 @@
 ---
 title: 四川麻将
-author: AOSAI
-date: 2023/09/17
-category:
+date: 2023-09-17
+categories:
   - 麻将秘籍
-tag:
+tags:
   - 四川麻将
+  - 血战到底
   - 缺一门
 
 sticky: false # 此页面会在文章列表置顶

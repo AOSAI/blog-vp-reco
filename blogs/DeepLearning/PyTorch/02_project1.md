@@ -1,9 +1,9 @@
 ---
 title: 实战1-离散分类问题
 date: 2025-02-23
-category:
+categories:
   - PyTorch
-tag:
+tags:
   - PyTorch实战
   - 逻辑回归
   - 分类问题

@@ -1,9 +1,9 @@
 ---
 title: 实战1-参考答案
 date: 2025-03-03
-category:
+categories:
   - PyTorch
-tag:
+tags:
   - PyTorch实战
   - 逻辑回归
   - 分类问题
