@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a}from"./app-P8O63--9.js";const o={};function r(c,n){return a(),e("div")}const s=t(o,[["render",r]]),_=JSON.parse('{"path":"/tags/Matplotlib/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{s as comp,_ as data};
