@@ -23,7 +23,16 @@ export function getMdChildren(rootDir: string, subDir?: string) {
 
       return relativePath.replace(/\.md$/, "");
     })
-    .sort((a, b) => a.localeCompare(b, "zh"));  // 可自定义排序
+    .sort((a, b) => {
+      // 把 a 和 b 拆成字母和数字
+      const re = /(\D+)(\d+)/;
+      const [, aStr, aNum] = a.match(re) || ["", a, "0"];
+      const [, bStr, bNum] = b.match(re) || ["", b, "0"];
+      
+      // 先比较字母部分，再比较数字部分
+      if (aStr !== bStr) return aStr.localeCompare(bStr, "zh");
+      return Number(aNum) - Number(bNum);
+    });
 
   return files;
 }

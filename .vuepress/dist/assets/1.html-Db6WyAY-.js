@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a}from"./app-P8O63--9.js";const o={};function r(c,n){return a(),e("div")}const s=t(o,[["render",r]]),i=JSON.parse('{"path":"/tags/jitaleli/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{s as comp,i as data};

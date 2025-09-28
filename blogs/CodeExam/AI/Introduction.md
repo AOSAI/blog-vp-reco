@@ -14,3 +14,12 @@ tags:
 
 - [LA1.矩阵和向量的点积](./LinearAlgebra/LA1.md)
 - [LA2.矩阵转置](./LinearAlgebra/LA2.md)
+- [LA3.重塑矩阵](./LinearAlgebra/LA3.md)
+- [LA4.按行或列计算平均值](./LinearAlgebra/LA4.md)
+- [LA5.标量的矩阵乘法](./LinearAlgebra/LA5.md)
+- ==[LA6.计算协方差矩阵](./LinearAlgebra/LA6.md)==
+- ==[LA7.基向量变换矩阵](./LinearAlgebra/LA7.md)==
+- [LA8.将向量转换为对角矩阵](./LinearAlgebra/LA8.md)
+- [LA9.实现压缩行稀疏矩阵（CSR）格式转换](./LinearAlgebra/LA9.md)
+- ==[LA10.实现向量到直线的正交投影](./LinearAlgebra/LA10.md)==
+- [LA11.实现向量到直线的正交投影](./LinearAlgebra/LA10.md)

@@ -54,7 +54,7 @@ if __name__ == "__main__":
 
 #### 协方差与协方差矩阵
 
-==协方差(Covariance)== 是统计学中用于评估变量与变量之间相关性的一个指标，数学公式如下：
+==协方差(Covariance)== 是统计学中用于评估变量与变量之间相关性的一个指标，如果 X=Y 就变成了方差，数学公式如下：
 
 $$
 \begin{align*}
@@ -68,89 +68,170 @@ $$
 - 协方差大于 0，两个特征正相关。即一个增大，另一个倾向于增大。
 - 协方差小于 0，两个特征负相关，即一个增大，另一个倾向于减小。
 
-==协方差矩阵(Covariance Matrix)== 是指多个变量时，变量间两两之间的协方差系数，组成的矩阵。协方差矩阵是一个**对称矩阵**，因为 $\sigma_{ij} = \sigma_{ji}$。协方差矩阵的对角线元素是每个特征的方差，而非对角线元素则是特征之间的协方差。
+==协方差矩阵(Covariance Matrix)== 是指多个变量时，变量间两两之间的协方差系数，组成的矩阵。协方差矩阵是一个**对称矩阵**，因为 $\sigma_{ij} = \sigma_{ji}$。协方差矩阵的对角线元素是每个特征的方差，而非对角线元素则是特征之间的协方差。举例说明计算过程：
 
-#### 解题思路 1：Python 数组手搓
+1. 假设我们有一个矩阵 M，三行两列。
+2. 先求列向量的均值，然后对列向量的值做中心化 --> $X-E(x)$。
+3. 转置矩阵与自身相乘，得到自己与自己，自己与别人，两两之间的关系。
+4. 最后乘以 $\frac{1}{n}$ 总体标准化，或 $\frac{1}{n-1}$ 样本无偏估计。**n 为样本数量**。
 
-取均值：求和之后除以数量。难点在于 column 的时候，该怎么处理数据。Python 中的 sum() 求和函数可以直接对列表（list）、元组（tuple）这类可迭代对象求和，前提是一维的，并且元素是数值型。
+$$
+M=
+\begin{bmatrix}
+1 & 2 \\ 2 & 4 \\ 3 & 6
+\end{bmatrix}
+$$
 
-==基础循环写法==，行元素相加可以直接一个循环，然后对取出来的一维数组直接 sum 求和，但是列元素相加就不行了，只能写两个循环：
+$$
+\tilde{M}=
+\begin{bmatrix}
+1 - \frac{1+2+3}{3} & 2 - \frac{2+4+6}{3} \\[0.5em]
+2 - \frac{1+2+3}{3} & 4 - \frac{2+4+6}{3} \\[0.5em]
+3 - \frac{1+2+3}{3} & 6 - \frac{2+4+6}{3}
+\end{bmatrix}
+=
+\begin{bmatrix}
+-1 & -2 \\ 0 & 0 \\ 1 & 2
+\end{bmatrix}
+$$
+
+$$
+Cov=\frac{1}{n}*\tilde{M}^{T}*\tilde{M}
+=   \frac{1}{3}\begin{bmatrix} -1 & 0 & 1 \\ -2 & 0 & 2 \end{bmatrix}
+    \begin{bmatrix} -1 & -2 \\ 0 & 0 \\ 1 & 2 \end{bmatrix}
+=   \frac{1}{3}\begin{bmatrix} 2 & 4 \\ 4 & 8 \end{bmatrix}
+=   \begin{bmatrix} 0.67 & 1.33 \\ 1.33 & 2.67 \end{bmatrix}
+$$
+
+#### 解题思路 1：Numpy 数组处理
+
+Numpy 中有直接计算协方差矩阵的函数 ==np.cov()==，也可以使用数学公式的思路手写函数计算。==mean()== 函数求均值（LA4），==.T== 计算转置（LA2），==@== 计算矩阵点积（LA1）。
 
 ```py
-from typing import List, Union
+# ---------使用numpy计算协方差矩阵----------
+Cp = np.cov(X.T)
 
-def calculate_matrix_mean(matrix: List[List[Union[int, float]]], mode: str) -> List[float]:
-    len_row = len(matrix)
-    len_col = len(matrix[0])
-    result = []
+# ----------使用公式计算协方差矩阵------------
+Xn = X - X.mean(axis = 0)
+C = Xn.T@Xn/(X.shape[0]-1)
 
-    if mode == "row":
-        for item in matrix:
-            temp = sum(item) / len_col
-            result.append(temp)
+# ----------如果给的矩阵已经是 X.T 了------------
+Cp = np.cov(X)
 
-    if mode == "column":
-        for index in range(len_col):
-            temp = 0
-            for item in matrix:
-                temp += item[index]
-            result.append(temp / len_row)
-
-    return result
+Xn = X - X.mean(axis = 1, keepdims=True)
+C = Xn.T@Xn/(X.shape[1]-1)
 ```
 
-==列表推导式写法==，row 和上一个基本是一致的，在列这里，zip(\*matrix)其实是一种 **解包（unpack）** 操作：
+这里有**一个非常需要注意的点**，就是 numpy 之中的广播机制与 mean 轴降维之间的爱恨情仇。假设我们有一个矩阵 A，它的形状 shape=(3, 2)：==mean(axis=0)== 取列，值为 (2,)；==mean(axis=1)== 取行，值为（3,）。
 
-1. matrix 是一个二维列表（list of lists）
-2. \*A 会把 A 里的每一行，依次作为参数传给 zip()，==解构操作==
-3. zip() 会把这些行（不同的一维数组），按列对齐打包成元组，结果就等价于矩阵转置
+Numpy 广播中，比较两个数组形状时：
+
+1. 先把维度对齐（右对齐，缺的前面补 1）。它不会随便凑形状，只会在左边补 1。
+2. 然后逐维比较，如果两个维度相等，或者其中一个是 1，就兼容；否则报错。
+
+✅ (3,2) - (2,) 能广播，因为 NumPy 会把 (2,) 当作 (1, 2)，然后复制到每一行。还是拿 M 矩阵举例：
+
+$$
+\begin{bmatrix}
+1 & 2 \\ 2 & 4 \\ 3 & 6
+\end{bmatrix}
+\xrightarrow{\text{计算列均值}}
+\begin{bmatrix}
+2 & 4
+\end{bmatrix}
+\xrightarrow{\text{广播对齐维度}}
+\begin{bmatrix}
+2 & 4 \\ 2 & 4 \\ 2 & 4
+\end{bmatrix}
+$$
+
+❌ (3, 2) - (3,) 不能广播，因为 NumPy 只能把 (3,) → (1, 3)，而不是 (3, 1)。
+
+因此 mean 函数中需要 keepdims=True 这个参数，来保持原始的维度不变。它并不是从 (3, 1) 广播成 (3, 2) 的，广播只能从左边走，它是直接让形状保持 (3, 2)，计算好复制到每一列去。
+
+刚开始没有理解这个原理，导致我用了一个循环去解决问题，不过也能通过：
 
 ```py
-# 假设有两个列表，执行打包，最后外层套上list
-x = [1, 2, 3]
-y = ['a', 'b', 'c']
-print(list(zip(x, y)))
-
-# 输出结果
-[(1, 'a'), (2, 'b'), (3, 'c')]
-```
-
-```py
-from typing import List, Union
 import numpy as np
 
-def calculate_matrix_mean(matrix: List[List[Union[int, float]]], mode: str) -> List[float]:
-    len_row = len(matrix)
-    len_col = len(matrix[0])
+def calculate_covariance_matrix(vectors):
+    X = np.array(vectors)
+    row, col = X.shape
+    Xn = np.zeros((row, col))
 
-    if mode == "row":
-        result = [sum(row)/len_col for row in matrix]
-    else:
-        result = [sum(col)/len_row for col in zip(*matrix)]
+    index = 0
+    for vec in X:
+        Xn[index] = vec - vec.mean()
+        index += 1
 
-    return result
+    Cov = (Xn@Xn.T)/(col - 1)
+    return Cov.tolist()
 ```
 
-#### 解题思路 2：Numpy 数组处理
+其次需要注意的是直接使用 Numpy 的协方差矩阵计算函数 ==Cp = np.cov(X)==，可以使用，但是我遇到了**浮点数过多时，精度计算有误**的问题，无法解决，建议使用公式计算。
 
-Numpy 的操作可真是简洁的一批，==.mean()== 函数用于求均值，其中的参数 ==axis== 表示维度：
+- Cp 正确输出：6.666666666666667
+- Cp 实际输出：6.666666666666666
 
-1. **axis=0**：沿着 第 0 维 计算（竖着走），也就是 对列操作
-2. **axis=1**：沿着 第 1 维 计算（横着走），也就是 对行操作
+#### 解题思路 2：Python 数组手搓
 
-一定要注意最后转成 Python 的列表格式，不然，有一个极其无语的 bug，跟 Numpy 的设定有关，对于小数点后是 0 的浮点数，==比如 2.0，它会写成 2.==，系统会判别错误。
+手搓的思路到中心化都是一致的：
 
 ```py
-from typing import List, Union
-import numpy as np
+def calculate_covariance_matrix(vectors):
+    features = len(vectors)
+    samples = len(vectors[0])
+    vec1 = []
 
-def calculate_matrix_mean(matrix: List[List[Union[int, float]]], mode: str) -> List[float]:
-    A = np.array(matrix)
+    for index in range(features):
+        mean = sum(vectors[index]) / samples
+        vec1.append([(val - mean) for val in vectors[index]])
+        print(vec1)
+```
 
-    if mode == "row":
-        result = np.mean(A, dtype=float, axis=1).tolist()
-    else:
-        result = np.mean(A, dtype=float, axis=0).tolist()
+矩阵乘法有两个思路：
 
-    return result
+1. 用 append 动态拼接，写法简单，容易理解。
+
+虽然 append 会有扩容开销，但它是对称矩阵，可以利用它的性质，减少一些计算。
+
+```py
+result = []
+for index1 in range(features):
+    temp3 = []
+    for index2 in range(features):
+        temp2 = []
+        for index3 in range(samples):
+            # 减少计算量的核心
+            if index1 > index2:
+                temp2.append(result[index2][index1]*(samples-1))
+                break
+            temp1 = vec1[index1][index3] * vec1[index2][index3]
+            temp2.append(temp1)
+        temp3.append(sum(temp2)/(samples-1))
+    result.append(temp3)
+
+return result
+```
+
+2. 根据矩阵乘法结果的 shape，先生成一个全 0 的二维数组。然后用双重循环去填数。
+
+这种方法内存一次性分配，避免了反复扩容。每一步只做赋值，没有额外的排序、拼接开销，效率更高。
+
+```py
+result = [[0]*features for _ in range(features)]
+
+for index1 in range(features):
+    for index2 in range(features):
+        temp2 = []
+        for index3 in range(samples):
+            if index1 > index2:
+                result[index1][index2] = result[index2][index1]
+                break
+            temp1 = vec1[index1][index3] * vec1[index2][index3]
+            temp2.append(temp1)
+        if index1 <= index2:
+            result[index1][index2] = sum(temp2)/(samples-1)
+
+return result
 ```

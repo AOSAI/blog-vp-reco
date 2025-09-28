@@ -22,7 +22,7 @@ export const series = {
   ],
   "/blogs/ComputerVision": [
     { text: "图像处理", children: getMdChildren(ROOT_CV, "ImageProcessing") },
-    { text: "生图模型", children: getMdChildren(ROOT_CV, "ImageGeneration") },
+    { text: "图像生成", children: getMdChildren(ROOT_CV, "ImageGeneration") },
     { text: "目标检测", children: getMdChildren(ROOT_CV, "TargetDetection") },
   ],
   "/blogs/CodeExam/AI": [
