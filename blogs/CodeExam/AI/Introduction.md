@@ -22,4 +22,8 @@ tags:
 - [LA8.将向量转换为对角矩阵](./LinearAlgebra/LA8.md)
 - [LA9.实现压缩行稀疏矩阵（CSR）格式转换](./LinearAlgebra/LA9.md)
 - ==[LA10.实现向量到直线的正交投影](./LinearAlgebra/LA10.md)==
-- [LA11.实现向量到直线的正交投影](./LinearAlgebra/LA10.md)
+- [LA11.实现压缩列稀疏矩阵](./LinearAlgebra/LA11.md)
+- ==[LA12.计算向量之间的余弦相似度](./LinearAlgebra/LA12.md)==
+- [LA13.实现向量到直线的正交投影](./LinearAlgebra/LA13.md)
+- [LA14.实现向量到直线的正交投影](./LinearAlgebra/LA14.md)
+- [LA15.实现向量到直线的正交投影](./LinearAlgebra/LA15.md)
