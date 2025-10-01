@@ -24,6 +24,6 @@ tags:
 - ==[LA10.实现向量到直线的正交投影](./LinearAlgebra/LA10.md)==
 - [LA11.实现压缩列稀疏矩阵](./LinearAlgebra/LA11.md)
 - ==[LA12.计算向量之间的余弦相似度](./LinearAlgebra/LA12.md)==
-- [LA13.描述性统计计算器](./LinearAlgebra/LA13.md)
-- [LA14.实现向量到直线的正交投影](./LinearAlgebra/LA14.md)
-- [LA15.实现向量到直线的正交投影](./LinearAlgebra/LA15.md)
+- ==[LA13.描述性统计计算器](./LinearAlgebra/LA13.md)==
+- ==[LA14.泊松分布概率计算器](./LinearAlgebra/LA14.md)==
+- [LA15.点积计算器](./LinearAlgebra/LA15.md)
