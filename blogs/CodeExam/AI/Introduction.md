@@ -27,3 +27,8 @@ tags:
 - ==[LA13.描述性统计计算器](./LinearAlgebra/LA13.md)==
 - ==[LA14.泊松分布概率计算器](./LinearAlgebra/LA14.md)==
 - [LA15.点积计算器](./LinearAlgebra/LA15.md)
+- [LA16.多项式特征的 Phi 变换](./LinearAlgebra/LA16.md)
+- ==[LA17.计算矩阵的特征值](./LinearAlgebra/LA17.md)==
+- [LA18.点积计算器](./LinearAlgebra/LA15.md)
+- [LA19.点积计算器](./LinearAlgebra/LA15.md)
+- [LA20.点积计算器](./LinearAlgebra/LA15.md)
