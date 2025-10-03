@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app-DCqdGVAs.js";const o={};function n(r,c){return a(),t("div")}const l=e(o,[["render",n]]),_=JSON.parse('{"path":"/categories/shujuduanzaofang/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{l as comp,_ as data};
