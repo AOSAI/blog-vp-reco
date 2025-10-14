@@ -6,6 +6,7 @@ const ROOT_HOBBIES = "blogs/Hobbies";
 const ROOT_ML = "blogs/MachineLearning";
 const ROOT_DL = "blogs/DeepLearning";
 const ROOT_CV = "blogs/ComputerVision";
+const ROOT_CV_1 = "blogs/ComputerVision/ImageProcessing";
 const ROOT_DF = "blogs/dataFoundry";
 
 export const series = {
@@ -20,8 +21,12 @@ export const series = {
     { text: "Numpy", children: getMdChildren(ROOT_DF, "Numpy") },
     { text: "Matplotlib", children: getMdChildren(ROOT_DF, "Matplotlib") },
   ],
+  "/blogs/ComputerVision/ImageProcessing": [
+    { text: "OpenCV 入门", children: getMdChildren(ROOT_CV_1, "OpenCV1") },
+    { text: "OpenCV 进阶", children: getMdChildren(ROOT_CV_1, "OpenCV2") },
+    { text: "OpenCV 实战", children: getMdChildren(ROOT_CV_1, "OpenCV3") },
+  ],
   "/blogs/ComputerVision": [
-    { text: "图像处理", children: getMdChildren(ROOT_CV, "ImageProcessing") },
     { text: "图像生成", children: getMdChildren(ROOT_CV, "ImageGeneration") },
     { text: "目标检测", children: getMdChildren(ROOT_CV, "TargetDetection") },
   ],

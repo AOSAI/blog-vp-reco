@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a}from"./app-DCqdGVAs.js";const o={};function c(n,r){return a(),e("div")}const l=t(o,[["render",c]]),m=JSON.parse('{"path":"/custom-page.html","title":"","lang":"en-US","frontmatter":{"layout":"CustomLayout"},"headers":[],"git":{},"filePathRelative":null}');export{l as comp,m as data};
