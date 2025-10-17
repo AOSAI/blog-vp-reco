@@ -32,3 +32,8 @@ tags:
 - [LA18.矩阵变换（逆矩阵；LA7）](./LinearAlgebra/LA18.md)
 - [LA19.计算矩阵的逆（逆矩阵；LA7，LA18）](./LinearAlgebra/LA19.md)
 - [LA20.计算矩阵的积（LA1，LA15）](./LinearAlgebra/LA20.md)
+- ==[LA21.使用 Jacobi 方法求解线性方程组](./LinearAlgebra/LA21.md)==
+- ==[LA22.计算相关矩阵](./LinearAlgebra/LA22.md)==
+- [LA23.实现简化行阶梯形（RREF）函数](./LinearAlgebra/LA23.md)
+- [LA24.计算相关矩阵](./LinearAlgebra/LA24.md)
+- [LA25.计算相关矩阵](./LinearAlgebra/LA25.md)
