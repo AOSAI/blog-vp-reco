@@ -12,12 +12,19 @@ const ROOT_DF = "blogs/dataFoundry";
 export const series = {
   "/blogs/MachineLearning": [
     { text: "机器学习", children: getMdChildren(ROOT_ML, "MachineLearning") },
-    { text: "推荐系统", children: getMdChildren(ROOT_ML, "recommendationSystem") },
+    {
+      text: "推荐系统",
+      children: getMdChildren(ROOT_ML, "recommendationSystem"),
+    },
   ],
   "/blogs/DeepLearning": [
     { text: "机器学习", children: getMdChildren(ROOT_DL, "PyTorch") },
   ],
   "/blogs/DataFoundry": [
+    {
+      text: "DataStructure",
+      children: getMdChildren(ROOT_DF, "DataStructure"),
+    },
     { text: "Numpy", children: getMdChildren(ROOT_DF, "Numpy") },
     { text: "Matplotlib", children: getMdChildren(ROOT_DF, "Matplotlib") },
   ],
@@ -31,12 +38,18 @@ export const series = {
     { text: "目标检测", children: getMdChildren(ROOT_CV, "TargetDetection") },
   ],
   "/blogs/CodeExam/AI": [
-    { text: "线性代数", children: getMdChildren(ROOT_CODE_AI, "LinearAlgebra") },
-    { text: "机器学习", children: getMdChildren(ROOT_CODE_AI, "MachineLearning") },
+    {
+      text: "线性代数",
+      children: getMdChildren(ROOT_CODE_AI, "LinearAlgebra"),
+    },
+    {
+      text: "机器学习",
+      children: getMdChildren(ROOT_CODE_AI, "MachineLearning"),
+    },
   ],
   "/blogs/Hobbies": [
     { text: "雀神之路", children: getMdChildren(ROOT_HOBBIES, "mahjong") },
     { text: "音乐之旅", children: getMdChildren(ROOT_HOBBIES, "musictheroy") },
   ],
-  "/docs/desktop_app": getMdChildren("docs/desktop_app")
-}
+  "/docs/desktop_app": getMdChildren("docs/desktop_app"),
+};
