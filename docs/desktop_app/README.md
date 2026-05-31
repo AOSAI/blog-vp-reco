@@ -1,6 +1,6 @@
 ---
 title: 桌面级应用开发相关
-# index: True
+index: True
 # icon: laptop-code
 # category:
 #   - 目录

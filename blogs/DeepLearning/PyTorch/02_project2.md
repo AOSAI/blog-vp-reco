@@ -18,7 +18,7 @@ UCI Machine Learning Repository 是一个著名的公开数据集仓库，由加
 
 P.S. 为什么说的这么详细，是因为我最初看到这些全是英文的东西，非常的抗拒，总觉得很难，没有一点看下去的欲望，而网页的全文翻译有的时候，并不是那么准确，有可能导致理解起来更为困难。所以，嗯，为了鼓励曾经的我自己，以及像曾经的我一样，难以坚持的小伙伴。
 
-![2.1 公开数据集仓库 - UCI - 1](/pytorch/02_classification/02-01.png =560x)
+![2.1 公开数据集仓库 - UCI - 1](/DeepLearning/pytorch/02_classification/02-01.png =560x)
 
 UCI 仓库对数据集的所有特征列了一个表格，并且对于一些特别需要说明的特征，在下方（Additional Variable Information）中进行了解释。方便我们理解，更好的进行特征工程。
 
@@ -26,9 +26,9 @@ UCI 仓库对数据集的所有特征列了一个表格，并且对于一些特�
 
 <div class="layout">
 
-![2.2 公开数据集仓库 - UCI - 2](/pytorch/02_classification/02-02.png =360x)
+![2.2 公开数据集仓库 - UCI - 2](/DeepLearning/pytorch/02_classification/02-02.png =360x)
 
-![2.3 公开数据集仓库 - UCI - 3](/pytorch/02_classification/02-03.png =360x)
+![2.3 公开数据集仓库 - UCI - 3](/DeepLearning/pytorch/02_classification/02-03.png =360x)
 
 </div>
 
@@ -314,7 +314,7 @@ print("集成模型的准确率:", accuracy_score(y_test, y_pred_voting))
 - Leaderboard：提交后评分的排名（现在基本都是 100%的正确率）
 - Rules：规则说明（比如下载一个项目的数据集后，默认你接受了这个竞赛挑战，未提交答案的情况下，是不允许你下载其它项目的数据集的）
 
-![2.4 Kaggle平台 - 泰坦尼克号幸存者分类](/pytorch/02_classification/02-04.png =560x)
+![2.4 Kaggle平台 - 泰坦尼克号幸存者分类](/DeepLearning/pytorch/02_classification/02-04.png =560x)
 
 一般来说，我们只用看 Overview 和 data 两个部分，前者是为了让我们了解，项目想让我们做什么（目标），后者是为了获取数据集，以及让我们快速了解特征的构成。
 

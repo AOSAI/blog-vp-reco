@@ -10,6 +10,7 @@ const ROOT_CV_1 = "blogs/ComputerVision/ImageProcessing";
 const ROOT_DF = "blogs/dataFoundry";
 
 export const series = {
+  // 机器学习
   "/blogs/MachineLearning": [
     { text: "机器学习", children: getMdChildren(ROOT_ML, "MachineLearning") },
     {
@@ -17,9 +18,28 @@ export const series = {
       children: getMdChildren(ROOT_ML, "recommendationSystem"),
     },
   ],
+
+  // 深度学习
   "/blogs/DeepLearning": [
-    { text: "机器学习", children: getMdChildren(ROOT_DL, "PyTorch") },
+    { text: "深度学习", children: getMdChildren(ROOT_DL, "PyTorch") },
   ],
+  "/blogs/DeepLearning/EpochalAlgorithms": getMdChildren(
+    "blogs/DeepLearning/EpochalAlgorithms",
+  ),
+  "/blogs/DeepLearning/NetworkStructure": getMdChildren(
+    "blogs/DeepLearning/NetworkStructure",
+  ),
+  "/blogs/DeepLearning/ActivationFunction": getMdChildren(
+    "blogs/DeepLearning/ActivationFunction",
+  ),
+  "/blogs/DeepLearning/LossFunction": getMdChildren(
+    "blogs/DeepLearning/LossFunction",
+  ),
+  "/blogs/DeepLearning/Optimizer": getMdChildren(
+    "blogs/DeepLearning/Optimizer",
+  ),
+
+  // 数据锻造坊
   "/blogs/DataFoundry": [
     {
       text: "DataStructure",
@@ -28,6 +48,8 @@ export const series = {
     { text: "Numpy", children: getMdChildren(ROOT_DF, "Numpy") },
     { text: "Matplotlib", children: getMdChildren(ROOT_DF, "Matplotlib") },
   ],
+
+  // 计算机视觉
   "/blogs/ComputerVision/ImageProcessing": [
     { text: "OpenCV 入门", children: getMdChildren(ROOT_CV_1, "OpenCV1") },
     { text: "OpenCV 进阶", children: getMdChildren(ROOT_CV_1, "OpenCV2") },

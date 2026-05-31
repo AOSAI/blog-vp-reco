@@ -27,7 +27,7 @@ PyTorch 和 Tensorflow 都是当下最流行的 AI 框架，我看了一些视�
 
 一般英伟达的显卡都是有 GPU 模块的，我们可以从 **任务管理器 --> 性能** 这里去查看：
 
-![1.1 查看电脑中是否有GPU](/pytorch/01_base/01-01.png)
+![1.1 查看电脑中是否有GPU](/DeepLearning/pytorch/01_base/01-01.png)
 
 我现在使用的笔记本是 17 年的买的，显卡为 GTX 1050Ti，已经非常的老旧，从图片中可以看到只有 4G 的显存，大模型肯定是跑不了的。
 
@@ -37,11 +37,11 @@ PyTorch 和 Tensorflow 都是当下最流行的 AI 框架，我看了一些视�
 
 @tab 显卡驱动更新前
 
-![1.2 显卡驱动更新前](/pytorch/01_base/01-02.png)
+![1.2 显卡驱动更新前](/DeepLearning/pytorch/01_base/01-02.png)
 
 @tab 显卡驱动更新后
 
-![1.3 显卡驱动更新后](/pytorch/01_base/01-03.png)
+![1.3 显卡驱动更新后](/DeepLearning/pytorch/01_base/01-03.png)
 
 :::
 
@@ -54,7 +54,7 @@ PyTorch 和 Tensorflow 都是当下最流行的 AI 框架，我看了一些视�
 
 ==Bug 记录==：根据这个更新教程，会安装一个叫做 GeForce Experience 的应用程序。我的电脑虽然重启了，但是并没有直接更新驱动。而是需要在这个程序里（如图所示）：
 
-![1.4 显卡驱动更新补充](/pytorch/01_base/01-04.png)
+![1.4 显卡驱动更新补充](/DeepLearning/pytorch/01_base/01-04.png)
 
 下载一个叫做 **NVIDIA Studio 驱动程序** 的东西，它就是最新的适配的驱动，更新完之后也需要重启。重启后使用图 1.2 中的命令行代码：
 
@@ -80,9 +80,9 @@ nvcc --version
 
 <div class="layout">
 
-![1.5 CUDA向后兼容](/pytorch/01_base/01-05.png =360x)
+![1.5 CUDA向后兼容](/DeepLearning/pytorch/01_base/01-05.png =360x)
 
-![1.6 CUDA小版本兼容](/pytorch/01_base/01-06.png =360x)
+![1.6 CUDA小版本兼容](/DeepLearning/pytorch/01_base/01-06.png =360x)
 
 </div>
 
@@ -90,7 +90,7 @@ nvcc --version
 
 **小版本兼容**是从 CUDA11 版本开始提供的功能，即你下载的即使是 11.0，也可以兼容到最新的 11.8，只要在 11 这个大版本里面，都可以成功运行。如图 1.6 所示。
 
-![1.7 CUDA向前兼容](/pytorch/01_base/01-07.png =560x)
+![1.7 CUDA向前兼容](/DeepLearning/pytorch/01_base/01-07.png =560x)
 
 **向前兼容**其实就是小版本兼容的 PLUS 版，涉及到跨越大版本的兼容情况，看图 1.7，这个图中的 C 表示兼容，X 表示不兼容，要注意的是它只表示向前兼容的情况。
 
@@ -100,9 +100,9 @@ nvcc --version
 
 <div class="layout">
 
-![1.8 旧版本CUDA工具包](/pytorch/01_base/01-08.png =360x)
+![1.8 旧版本CUDA工具包](/DeepLearning/pytorch/01_base/01-08.png =360x)
 
-![1.9 新版本CUDA工具包](/pytorch/01_base/01-09.png =360x)
+![1.9 新版本CUDA工具包](/DeepLearning/pytorch/01_base/01-09.png =360x)
 
 </div>
 
@@ -150,7 +150,7 @@ conda remove -n folder_name/all     # 删除指定/全部虚拟环境
 **参考文献&相关链接：**
 
 1. [《Anaconda 下载地址》](https://www.anaconda.com)
-2. [《pytorch 的 github 官方文档》](https://github.com/pytorch/vision#installation)
+2. [《pytorch 的 github 官方文档》](https://github.com/DeepLearning/pytorch/vision#installation)
 
 ## 4. PyTorch 安装
 
@@ -158,9 +158,9 @@ conda remove -n folder_name/all     # 删除指定/全部虚拟环境
 
 <div class="layout">
 
-![1.10 PyTorch下载1](/pytorch/01_base/01-10.png =360x)
+![1.10 PyTorch下载1](/DeepLearning/pytorch/01_base/01-10.png =360x)
 
-![1.11 PyTorch下载2](/pytorch/01_base/01-11.png =360x)
+![1.11 PyTorch下载2](/DeepLearning/pytorch/01_base/01-11.png =360x)
 
 </div>
 
@@ -200,11 +200,11 @@ print(torch.version.cuda)  # 查看CUDA的版本号
 
 @tab 创建激活虚拟环境 & 下载 PyTorch
 
-![1.12 虚拟环境中PyTorch的安装](/pytorch/01_base/01-12.png =560x)
+![1.12 虚拟环境中PyTorch的安装](/DeepLearning/pytorch/01_base/01-12.png =560x)
 
 @tab 验证是否安装成功
 
-![1.13 验证PyTorch是否安装成功](/pytorch/01_base/01-13.png =560x)
+![1.13 验证PyTorch是否安装成功](/DeepLearning/pytorch/01_base/01-13.png =560x)
 
 :::
 

@@ -1,3 +1,6 @@
 .vuepress/.cache
 .vuepress/.temp
 node_modules
+AIAgent
+scripts
+AGENTS.md

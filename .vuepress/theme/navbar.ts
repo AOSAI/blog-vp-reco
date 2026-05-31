@@ -30,6 +30,26 @@ export const navbar = [
         text: "PyTorch(未整理)",
         link: "/blogs/DeepLearning/PyTorch/README.md",
       },
+      {
+        text: "跨时代算法",
+        link: "/blogs/DeepLearning/EpochalAlgorithms/01_xxx.md",
+      },
+      {
+        text: "网络结构",
+        link: "/blogs/DeepLearning/NetworkStructure/01_MLP.md",
+      },
+      {
+        text: "激活函数",
+        link: "/blogs/DeepLearning/ActivationFunction/01_Sigmoid.md",
+      },
+      {
+        text: "损失函数",
+        link: "/blogs/DeepLearning/LossFunction/01_MSE.md",
+      },
+      {
+        text: "优化器及其他",
+        link: "/blogs/DeepLearning/Optimizer/01_SGD.md",
+      },
     ],
   },
   {
