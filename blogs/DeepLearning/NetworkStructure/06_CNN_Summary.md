@@ -1,6 +1,6 @@
 ---
 title: CNN 家族总结：演进脉络与并行分支
-date: 2026/05/30
+date: 2026/06/27
 categories:
   - 网络结构
 tags:
@@ -9,7 +9,7 @@ tags:
   - 总结
 ---
 
-前五篇文章，我们沿着一条主线走了很远：从 LeNet 的 5 层到 ResNet 的 152 层。但深度只是 CNN 演进的一个维度。2014 年之后，研究者开始从宽度、效率、注意力、并行度等多个方向同时推进，形成了几条并行的演进路线。本文是整个 CNN 系列的收束。
+前五篇文章，我们沿着一条主线走了很远：从 LeNet 的 5 层到 ResNet 的 152 层。但深度只是 CNN 演进的一个维度。2014 年之后，研究者开始从宽度、效率、并行度等多个方向同时推进，形成了几条并行的演进路线。本文是整个 CNN 系列的收束。
 
 ## 1. 深度演进：从 LeNet 到 DenseNet
 
@@ -433,7 +433,9 @@ V2 把 ReLU 从 bottleneck 层移到了 expansion 层，bottleneck 层不加 ReL
 
 1. **NAS 搜索**：不再手动设计网络结构，让算法自动搜索最优配置
 2. **SE 注意力的轻量化版**：用 1×1 Conv 代替全连接层，计算量更小
-3. **h-swish 激活函数**：ReLU6 的近似，但更平滑，精度更高
+3. **[h-swish](../ActivationFunction/05_HardSwish.md) 激活函数**：基于 [ReLU6](../ActivationFunction/05_HardSwish.md) 的近似，但更平滑，精度更高
+
+SE 注意力后面会单独讲，这里先抓住一句话：**它给每个通道算一个权重，让重要通道更响，不重要通道小声一点**。MobileNetV3 里的轻量化，主要是把原版 SE 里的全连接层换成 1×1 Conv，并用 Hardsigmoid 代替 Sigmoid，减少移动端的计算开销。
 
 ```python
 # MobileNetV3 的 SE 模块（轻量化版）
@@ -508,11 +510,57 @@ MobileNetV4 在保持低延迟的同时，精度大幅提升（+12%），是目�
 
 > **一句话记住 MobileNetV4**：一个架构适配所有硬件，精度高、速度快。
 
-## 4. 注意力：特征重标定
+## 4. 基数：分组并行
 
-前面三个方向（深度、宽度、效率）都在调整卷积层的结构。注意力方向走了另一条路：**让网络自己学会"关注什么"**。
+2017 年，Xie 等人提出了 ResNeXt，核心思想是：**不加深、不加宽，加"并行路径数"**。
 
-### 4.1 SENet：通道注意力
+### 4.1 ResNeXt：并行路径数
+
+ResNeXt 的每个残差块内部，有 $C$ 条并行的路径（$C$ 叫 cardinality，基数）。每条路径是相同的变换（3×3 Conv），最后拼接或相加。
+
+```
+ResNet-50 的 Block：1 个 3×3 Conv
+ResNeXt-50 的 Block：32 个 3×3 Conv（并行）
+
+参数量：32 条路径 × 每条 1/32 通道 = 和 ResNet-50 相同
+但精度更高：Top-5 错误率 4.96% vs ResNet-50 的 5.25%
+```
+
+| 模型               | 参数量 | Top-5 错误率 | 变量               |
+| ------------------ | ------ | ------------ | ------------------ |
+| ResNet-50          | 25M    | 5.25%        | 深度=50, 宽度=2048 |
+| ResNeXt-50 (32×4d) | 25M    | 4.96%        | 深度=50, 基数=32   |
+
+> **一句话记住 ResNeXt**：不加深不加宽，加"并行通道数"，参数量不变精度更高。
+
+## 5. CNN 演进全景图与扩展模块
+
+![CNN 演进全景图](/DeepLearning/Network/06_cnn_timeline.png =560x)
+
+**四条演进路线的定位：**
+
+| 方向 | 核心问题             | 代表网络                                  | 系列位置 |
+| ---- | -------------------- | ----------------------------------------- | -------- |
+| 深度 | 网络可以做多深       | LeNet → AlexNet → VGG → ResNet → DenseNet | 主线     |
+| 宽度 | 一层能看多宽         | Inception v1 → v3 → Xception              | 支线     |
+| 效率 | 如何用更少算力做更好 | MobileNet v1/v2 → ShuffleNet              | 支线     |
+| 基数 | 如何用并行路径提升   | ResNeXt                                   | 支线     |
+
+这四条路线不是相互独立的，而是相互借鉴、相互融合。EfficientNet（2019）用 NAS 搜索 depth/width/resolution 的最优配比，就是把"深度"和"宽度"两个维度结合起来考虑。2020 年之后，Vision Transformer（ViT）开始取代 CNN 成为视觉领域的主流架构，但它借鉴了 CNN 的很多思想（如局部性、权值共享）。
+
+### 5.1 NAS：把架构设计变成搜索问题
+
+前面几条路线都在讲“人怎么设计网络”：加深、加宽、提效、增加并行路径。到了 MobileNetV3 和 EfficientNet 之后，一个新思路出现了：既然选择太多，能不能让算法帮我们试？
+
+以前设计 CNN，主要靠研究者手工试：这一层用 3×3 还是 5×5？通道数设成 32 还是 64？要不要加 SE 注意力？每个选择都像是在搭积木。
+
+**神经架构搜索（Neural Architecture Search, NAS）** 做的事，就是把这些选择变成一个搜索问题。人先规定一个可选范围，叫**搜索空间**；算法再不断尝试不同组合，看哪一种在准确率、参数量、延迟之间最划算。
+
+MobileNetV3 的重点不是“找最大模型”，而是“找手机上最划算的模型”。所以它不只看 ImageNet 准确率，还会把真实设备上的推理延迟也算进去。最后搜索出来的结构，可能不是参数最少的，也不是精度最高的，但在手机上跑起来最均衡。
+
+> **一句话记住 NAS**：不是让 AI 凭空发明网络，而是在一堆候选积木里，自动试出最适合目标硬件的搭法。
+
+### 5.2 SE：通道注意力
 
 2017 年，Momenta 提出了 SENet（Squeeze-and-Excitation Network），核心思想是：**给每个通道学习一个权重**。
 
@@ -525,31 +573,9 @@ SE Block：
 
 直觉：一张猫图中，"有猫耳朵"的通道应该权重高，"背景纹理"的通道应该权重低。SE Block 让网络自动学这个权重。
 
-> **一句话记住 SENet**：让网络自己学"哪个通道重要"。
+> **一句话记住 SE**：让网络自己学"哪个通道重要"。
 
-```python
-class SEBlock(nn.Module):
-    def __init__(self, channels, reduction=16):
-        super().__init__()
-        self.squeeze = nn.AdaptiveAvgPool2d(1)  # 全局平均池化
-        self.excitation = nn.Sequential(
-            nn.Linear(channels, channels // reduction),
-            nn.ReLU(inplace=True),
-            nn.Linear(channels // reduction, channels),
-            nn.Sigmoid(),  # 输出 0~1 的权重
-        )
-
-    def forward(self, x):
-        b, c, _, _ = x.shape
-        # Squeeze: (B, C, H, W) → (B, C)
-        w = self.squeeze(x).view(b, c)
-        # Excitation: (B, C) → (B, C)
-        w = self.excitation(w).view(b, c, 1, 1)
-        # Scale: 每个通道乘上权重
-        return x * w
-```
-
-### 4.2 CBAM：通道 + 空间注意力
+### 5.3 CBAM：通道 + 空间注意力
 
 2018 年，Sanghyun Woo 等人提出了 CBAM（Convolutional Block Attention Module），在 SE 的基础上增加了**空间注意力**。
 
@@ -565,44 +591,5 @@ CBAM = 通道注意力 + 空间注意力
 空间注意力的实现：对通道维度做 max pooling 和 avg pooling，拼接后用 7×7 卷积生成空间权重图。
 
 > **一句话记住 CBAM**：SE 学"哪个通道重要"，CBAM 还学"哪个位置重要"。
-
-## 5. 基数：分组并行
-
-2017 年，Xie 等人提出了 ResNeXt，核心思想是：**不加深、不加宽，加"并行路径数"**。
-
-### 5.1 ResNeXt：并行路径数
-
-ResNeXt 的每个残差块内部，有 $C$ 条并行的路径（$C$ 叫 cardinality，基数）。每条路径是相同的变换（3×3 Conv），最后拼接或相加。
-
-```
-ResNet-50 的 Block：1 个 3×3 Conv
-ResNeXt-50 的 Block：32 个 3×3 Conv（并行）
-
-参数量：32 条路径 × 每条 1/32 通道 = 和 ResNet-50 相同
-但精度更高：Top-5 错误率 5.49% vs ResNet-50 的 5.25%（~22M 参数）
-```
-
-| 模型               | 参数量 | Top-5 错误率 | 变量               |
-| ------------------ | ------ | ------------ | ------------------ |
-| ResNet-50          | 25M    | 5.25%        | 深度=50, 宽度=2048 |
-| ResNeXt-50 (32×4d) | 25M    | 4.96%        | 深度=50, 基数=32   |
-
-> **一句话记住 ResNeXt**：不加深不加宽，加"并行通道数"，参数量不变精度更高。
-
-## 6. CNN 演进全景图
-
-![CNN 演进全景图](/DeepLearning/Network/06_cnn_timeline.png =560x)
-
-**五条演进路线的定位：**
-
-| 方向   | 核心问题             | 代表网络                                  | 系列位置 |
-| ------ | -------------------- | ----------------------------------------- | -------- |
-| 深度   | 网络可以做多深       | LeNet → AlexNet → VGG → ResNet → DenseNet | 主线     |
-| 宽度   | 一层能看多宽         | Inception v1 → v3 → Xception              | 支线     |
-| 效率   | 如何用更少算力做更好 | MobileNet v1/v2 → ShuffleNet              | 支线     |
-| 注意力 | 如何让网络"关注重点" | SENet → CBAM                              | 支线     |
-| 基数   | 如何用并行路径提升   | ResNeXt                                   | 支线     |
-
-这五条路线不是相互独立的，而是相互借鉴、相互融合。EfficientNet（2019）用 NAS 搜索 depth/width/resolution 的最优配比，就是把"深度"和"宽度"两个维度结合起来考虑。2020 年之后，Vision Transformer（ViT）开始取代 CNN 成为视觉领域的主流架构，但它借鉴了 CNN 的很多思想（如局部性、权值共享）。
 
 > **CNN 的遗产**：它不仅是一种网络结构，更是一种思维方式——用先验知识（局部性、平移不变性）来约束网络结构，让模型在给定计算预算下更高效地学习。

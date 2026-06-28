@@ -32,7 +32,7 @@ export const navbar = [
       },
       {
         text: "跨时代算法",
-        link: "/blogs/DeepLearning/EpochalAlgorithms/01_xxx.md",
+        link: "/blogs/DeepLearning/EpochalAlgorithms/01_ImageClassification.md",
       },
       {
         text: "网络结构",
@@ -47,8 +47,16 @@ export const navbar = [
         link: "/blogs/DeepLearning/LossFunction/01_MSE.md",
       },
       {
-        text: "优化器及其他",
+        text: "模型优化器",
         link: "/blogs/DeepLearning/Optimizer/01_SGD.md",
+      },
+      {
+        text: "归一化方法",
+        link: "/blogs/DeepLearning/Normalization/01_BatchNorm.md",
+      },
+      {
+        text: "评价指标",
+        link: "/blogs/DeepLearning/EvaluationMetrics/01_CommonMetrics.md",
       },
     ],
   },

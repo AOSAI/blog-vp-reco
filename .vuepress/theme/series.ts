@@ -38,6 +38,12 @@ export const series = {
   "/blogs/DeepLearning/Optimizer": getMdChildren(
     "blogs/DeepLearning/Optimizer",
   ),
+  "/blogs/DeepLearning/Normalization": getMdChildren(
+    "blogs/DeepLearning/Normalization",
+  ),
+  "/blogs/DeepLearning/EvaluationMetrics": getMdChildren(
+    "blogs/DeepLearning/EvaluationMetrics",
+  ),
 
   // 数据锻造坊
   "/blogs/DataFoundry": [
