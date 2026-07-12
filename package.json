@@ -8,7 +8,9 @@
   "license": "MIT",
   "scripts": {
     "build": "vuepress build docs --clean-cache --clean-temp",
+    "docs:build": "npm run build",
     "dev": "vuepress dev docs",
+    "docs:dev": "npm run dev",
     "docs:dev-clean": "vuepress dev docs --clean-cache --clean-temp",
     "docs:preview": "http-server docs/.vuepress/dist",
     "vp-update": "npx vp-update"
