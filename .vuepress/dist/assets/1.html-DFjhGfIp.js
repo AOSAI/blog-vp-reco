@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a}from"./app-5valQcRL.js";const o={};function s(r,c){return a(),e("div")}const l=t(o,[["render",s]]),_=JSON.parse('{"path":"/tags/Lovasz-Loss/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{l as comp,_ as data};

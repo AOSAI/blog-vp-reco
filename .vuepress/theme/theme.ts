@@ -1,17 +1,17 @@
 import recoTheme from "vuepress-theme-reco";
-import { series } from './series';
-import { navbar } from './navbar';
-import { timeline, friendshipLinks } from './build_in_page';
+import { series } from "./series";
+import { navbar } from "./navbar";
+import { timeline, friendshipLinks } from "./build_in_page";
 
 export default recoTheme({
   logo: "/logo1.svg",
   author: "AoSaiX",
   authorAvatar: "/head.png",
-  repo: "https://github.com/AOSAI/blog-vp-reco.git",
+  repo: "https://github.com/AOSAI/aosai-blog.git",
   docsDir: "example",
   lastUpdatedText: "Git仓库提交时间",
 
-  series: series,  // series 为原 sidebar
+  series: series, // series 为原 sidebar
   navbar: navbar,
   pages: timeline,
   friendshipLinks: friendshipLinks,
