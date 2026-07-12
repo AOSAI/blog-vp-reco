@@ -1,23 +1,42 @@
----
-home: true
-modules:
-  - BannerBrand
-  - Blog
-  - Features
-  - Footer
-bannerBrand:
-  bgImage: "/bg.svg"
-  title: 菜，就多练，别哔哔
-  description: AoSaiX‘s Blog
-  tagline: 记得小时候，老师第一次问我们长大了以后想成为什么样的人，我看别人都说的科学家，我也跟着说科学家。兜兜转转十几载，想做的事儿好像很多，但回过头一看，原来载着杨利伟的神州五号飞船，第一颗绕月探测卫星嫦娥一号，已经刻在了血液里。
-blog:
-  # socialLinks:
-  #   - { icon: "LogoGithub", link: "https://github.com/recoluan" }
-features:
-  - title: 勇气
-    details: 生死看淡，不服就干。很多事情没有那么难，你去试一下，说不定就成了。  --雷军
-  - title: 坚持
-    details: 今天很残酷，明天更残酷，后天会很美好，但绝大多数人都死在明天晚上，见不到后天的太阳。  --马云
-  - title: 认知
-    details: 99%的问题都有标准答案，找个懂的人问问。只有认知的突破，才能带来真正的成长。  --雷军
----
+# ao-sai-x-blog
+
+The Site is generated using [vuepress](https://vuepress.vuejs.org/) and [vuepress-theme-plume](https://github.com/pengzhanbo/vuepress-theme-plume)
+
+## Install
+
+```sh
+npm i
+```
+
+## Usage
+
+```sh
+# start dev server
+npm run docs:dev
+# build for production
+npm run docs:build
+# preview production build in local
+npm run docs:preview
+# update vuepress and theme
+npm run vp-update
+```
+
+## Deploy to GitHub Pages
+
+The plume theme has been created with GitHub Actions: `.github/workflows/docs-deploy.yml`. You also need to make the following settings in the GitHub repository:
+
+- [ ] `settings > Actions > General`, Scroll to the bottom of the page, under `Workflow permissions`, check `Read and write permissions`, and click the save button.
+
+- [ ] `settings > Pages`, In `Build and deployment`, select `Deploy from a branch` for `Source`, choose `gh-pages` for `Branch`, and click the save button.
+  (The `gh-pages` branch may not exist upon first creation. You can complete the above setup first, push the code to the main branch, wait for `github actions` to finish, and then proceed with the setup.)
+
+- [ ] Modify the `base` option in `docs/.vuepress/config.ts`:
+  - If you are planning to deploy to `https://<USERNAME>.github.io/`, you can skip this step as `base` defaults to `"/"`.
+  - If you are planning to deploy to `https://<USERNAME>.github.io/<REPO>/`, meaning your repository URL is `https://github.com/<USERNAME>/<REPO>`, set `base` to `"/<REPO>/"`.
+
+To customize a domain name, please refer to [Github Pages](https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages)
+
+## Documents
+
+- [vuepress](https://vuepress.vuejs.org/)
+- [vuepress-theme-plume](https://theme-plume.vuejs.press/)

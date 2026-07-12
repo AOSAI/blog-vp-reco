@@ -1,25 +1,20 @@
 ---
-title: PyQt5使用及踩坑小记 # 文章标题
-# cover: /assets/images/cover1.jpg  # 自定义封面图片
-# icon: file  # 页面的图标，在title的左侧
-order: 3 # 侧边栏的顺序
-author: AOSAI # 设置作者
-date: 2023-09-06 # 设置写作时间
-# 一个页面可以有多个分类
+title: PyQt5使用及踩坑小记
+order: 3
+author: AOSAI
+date: 2023-09-06T00:00:00.000Z
 category:
   - 软件开发
   - 桌面程序
-# 一个页面可以有多个标签
 tag:
   - Python
   - PyQt5
   - QStackedWidget
   - 踩坑记录
-
-sticky: false # 此页面会在文章列表置顶
-star: false # 此页面会出现在文章收藏中
-footer: 等我攒够六便士，就去寻找月亮 # 自定义页脚
-copyright: AOSAI # 你可以自定义版权信息
+sticky: false
+star: false
+footer: 等我攒够六便士，就去寻找月亮
+copyright: AOSAI
 ---
 
 ## 序言

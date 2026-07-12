@@ -1,19 +1,16 @@
 ---
 title: Python网络爬虫-爬取12306余票信息
-# cover: /assets/images/cover1.jpg  # 自定义封面图片
-# icon: file  # 页面的图标，在title的左侧
 order: 4
 author: AOSAI
-date: 2023-09-08
+date: 2023-09-08T00:00:00.000Z
 category:
   - 软件开发
 tag:
   - Python
   - PyQt5
   - 网络爬虫
-
-sticky: false # 此页面会在文章列表置顶
-star: false # 此页面会出现在文章收藏中
+sticky: false
+star: false
 footer: 等我攒够六便士，就去寻找月亮
 copyright: AOSAI
 ---

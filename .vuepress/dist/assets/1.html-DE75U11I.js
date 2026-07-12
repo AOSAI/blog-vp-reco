@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a}from"./app-BHSdKjYv.js";const c={};function o(r,n){return a(),e("div")}const s=t(c,[["render",o]]),_=JSON.parse('{"path":"/tags/Recall/1.html","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{s as comp,_ as data};

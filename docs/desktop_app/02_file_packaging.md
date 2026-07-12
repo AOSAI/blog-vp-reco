@@ -1,24 +1,19 @@
 ---
-title: Python文件打包exe方法 # 文章标题
-# cover: /assets/images/cover1.jpg  # 自定义封面图片
-# icon: file  # 页面的图标，在title的左侧
-order: 2 # 侧边栏的顺序
-author: AOSAI # 设置作者
-date: 2023-08-30 # 设置写作时间
-# 一个页面可以有多个分类
+title: Python文件打包exe方法
+order: 2
+author: AOSAI
+date: 2023-08-30T00:00:00.000Z
 category:
   - 软件打包
-# 一个页面可以有多个标签
 tag:
   - Python
   - Pyinstaller
   - Nuitka
   - Mingw64
-
-sticky: false # 此页面会在文章列表置顶
-star: false # 此页面会出现在文章收藏中
-footer: 等我攒够六便士，就去寻找月亮 # 自定义页脚
-copyright: AOSAI # 你可以自定义版权信息
+sticky: false
+star: false
+footer: 等我攒够六便士，就去寻找月亮
+copyright: AOSAI
 ---
 
 ## 为什么要打包

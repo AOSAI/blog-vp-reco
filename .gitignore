@@ -1,7 +1,8 @@
-.vuepress/.cache
-.vuepress/.temp
-node_modules
-AIAgent
+node_modules/
+docs/.vuepress/.cache/
+docs/.vuepress/.temp/
+docs/.vuepress/dist/
+
+.DS_Store
+*.log
 scripts
-AGENTS.md
-.mimocode

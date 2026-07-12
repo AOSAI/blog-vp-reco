@@ -1,9 +1,6 @@
 ---
 title: 桌面级应用开发相关
-index: True
-# icon: laptop-code
-# category:
-#   - 目录
+index: true
 ---
 
 ## 博客用图片处理工具
